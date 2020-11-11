@@ -6,12 +6,20 @@
 # Déclarez les personnages utilisés dans le jeu.
 define e = Character('Eileen', color="#c8ffc8")
 
+init python:
+    from despin.abs import *
+
+    testInitUn = "hahahaha"
+    caracTest = carac.Carac("monId", "MaValeur")
 
 # Le jeu commence ici
 label start:
 
-    e "Vous venez de créer un nouveau jeu Ren'Py."
+    python:
+        testUn = 8
 
-    e "Après avoir ajouté une histoire, des images et de la musique, vous pourrez le présenter au monde entier !"
+    e "On commence : [testUn]"
+    e "Suite init : [testInitUn]"
+    e "Suite carac : [caracTest.m_Valeur]"
 
     return
