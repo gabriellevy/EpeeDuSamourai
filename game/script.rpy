@@ -5,6 +5,7 @@
 
 # Déclarez les personnages utilisés dans le jeu.
 define s = Character('Shogun', color="#580404")
+define t = Character('Tatsu', color="#e30909")
 
 label start:
 
@@ -13,7 +14,7 @@ label start:
     scene bg campagne_japonaise
     show screen profil_joueur
     # jump de test tmp ci après
-    jump resume_debut_histoire
+    jump numero2
     # sélection de la compétence de combat de base
     "En tant que Samouraï, vous êtes passé maître dans une des quatre disciplines décrites ci-après."
     "Au cours de l'aventure, il vous sera précisé, en temps voulu, d'utiliser la discipline dans laquelle vous excellez ou de prendre en considération les effets de cette discipline sur le déroulement d'un combat."

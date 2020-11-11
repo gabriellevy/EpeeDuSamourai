@@ -8,3 +8,14 @@ label numero1:
             jump numero10
         "vers l'est, en passant par les marais de Mizokumo, pour atteindre ensuite la montagne":
             jump numero29
+
+label numero2:
+    t "— A présent, mortel, écoute la première énigme :"
+    t "Dans une forteresse sans porte ni fenêtre, Aux murs de marbre blanc comme neige, Tapissés d'une peau douce comme la soie, Au milieu d'une fontaine d'eau pure comme le cristal, Une pomme d'or, soudain,apparaît."
+    t "De quoi s'agit-il donc ?"
+    "Sur ces mots, le Tatsu vous contemple avidement, savourant à l'avance votre échec."
+    $ reponseTatsu = renpy.input("De quoi s'agit-il donc ?")
+    if reponseTatsu == "oeuf" or reponseTatsu == "Oeuf":
+        jump numero47
+    else:
+        jump numero26
