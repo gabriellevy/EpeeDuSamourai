@@ -15,6 +15,7 @@ label start:
 
 # mise en place des caractéristiques et des objets
 # la vraie initialisation du perso est dans perso_ldoelh.rpy
+    scene bg campagne_japonaise
     show screen profil_joueur
     # jump de test tmp ci après
     jump choix_discipline
@@ -59,7 +60,12 @@ label choix_discipline:
             $ NitoKenjutsu()
 
 label description_honneur:
-    "Discipline : [discipline]"
+    "En tant que Samouraï du Shogun, l'Honneur est pour vous une vertu primordiale."
+    "Vous commencez votre aventure avec 3 points d'Honneur."
+    "Certains actes vous permettront d'augmenter votre Honneur, d'autres le réduiront."
+    "De plus, votre Honneur aura une influence sur le déroulement des événements ;"
+    "selon son niveau, vous serez à même d'entreprendre ou non certaines actions."
+    "Si votre Honneur se trouve réduit à 0 au cours de votre mission, rendez-vous immédiatement au 99, et cela quels que soient les événements en cours."
 
 
 

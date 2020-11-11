@@ -15,7 +15,7 @@
 ##
 ## La chaîne de caractère contenu dans _() est éligible à la traduction.
 
-define config.name = _("EpeeDuSamourai")
+define config.name = _("L'épée du samouraï")
 
 
 ## Détermine si le titre renseigné plus haut est affiché sur l'écran du menu

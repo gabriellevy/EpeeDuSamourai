@@ -10,7 +10,9 @@ init -1 python:
     maxEndurance = endurance.m_Valeur
     chance = carac.Carac("Chance", 6 + random.randint(1, 6))
     maxChance = chance.m_Valeur
-    repas = carac.Carac("Repas", 10)
+    maxRepas = 10
+    repas = carac.Carac("Repas", maxRepas)
+    honneur = carac.Carac("Honneur", 3)
 
     flechesSaule = carac.Carac("Flèches de saule", 0)
     flechesHarpon = carac.Carac("Flèches harpon", 0)

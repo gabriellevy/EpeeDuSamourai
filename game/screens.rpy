@@ -1535,7 +1535,7 @@ screen profil_joueur():
     tag interface_personnage
     frame:
         xpos 5 ypos 5
-        grid 2 4:
+        grid 2 5:
             xsize 210
             spacing 5
             text _("[habilete.m_Id] : ")
@@ -1546,12 +1546,15 @@ screen profil_joueur():
             text _("[chance.m_Id] ([chance.m_Valeur]/[maxChance])")
             bar:
                 value AnimatedValue(chance.m_Valeur, maxChance, 1.0)
-            text _("[repas.m_Id] : ")
-            text _("[repas.m_Valeur]")
+            text _("[repas.m_Id] ([repas.m_Valeur]/[maxRepas])")
+            bar:
+                value AnimatedValue(repas.m_Valeur, maxRepas, 1.0)
+            text _("[honneur.m_Id] : ")
+            text _("[honneur.m_Valeur]")
 
 screen fleches():
     frame:
-        xpos 5 ypos 400
+        xpos 5 ypos 200
         grid 1 4:
             spacing 2
             text _("[flechesSaule.m_Valeur] [flechesSaule.m_Id]")
