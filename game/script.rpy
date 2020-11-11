@@ -6,20 +6,18 @@
 # Déclarez les personnages utilisés dans le jeu.
 define e = Character('Eileen', color="#c8ffc8")
 
-init python:
-    from despin.abs import *
+init -10 python:
+    from despin.abs import carac
 
-    testInitUn = "hahahaha"
     caracTest = carac.Carac("monId", "MaValeur")
 
-# Le jeu commence ici
 label start:
 
-    python:
-        testUn = 8
-
-    e "On commence : [testUn]"
-    e "Suite init : [testInitUn]"
-    e "Suite carac : [caracTest.m_Valeur]"
+# mise en place des caractéristiques et des objets
+# la vraie initialisation du perso est dans perso_ldoelh.rpy
+    show screen profil_joueur
+    "Prends ça !"
+    $ endurance.m_Valeur = endurance.m_Valeur - 5
+    "Ouille"
 
     return

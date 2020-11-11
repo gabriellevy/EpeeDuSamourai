@@ -1,26 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 9, in script
-    init python:
-  File "game/script.rpy", line 13, in <module>
-    caracTest = Carac("monId", "MaValeur")
-NameError: name 'Carac' is not defined
+  File "game/script.rpy", line 23, in script
+    $ endurance = endurance - 5
+  File "game/script.rpy", line 23, in <module>
+    $ endurance = endurance - 5
+TypeError: unsupported operand type(s) for -: 'instance' and 'int'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 9, in script
-    init python:
+  File "game/script.rpy", line 23, in script
+    $ endurance = endurance - 5
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/script.rpy", line 13, in <module>
-    caracTest = Carac("monId", "MaValeur")
-NameError: name 'Carac' is not defined
+  File "game/script.rpy", line 23, in <module>
+    $ endurance = endurance - 5
+TypeError: unsupported operand type(s) for -: 'instance' and 'int'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 EpeeDuSamourai 1.0
-Wed Nov 11 16:43:19 2020
+Wed Nov 11 18:43:57 2020

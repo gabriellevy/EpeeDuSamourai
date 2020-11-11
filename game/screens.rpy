@@ -1530,3 +1530,19 @@ style slider_pref_vbox:
 style slider_pref_slider:
     variant "small"
     xsize 600
+
+screen profil_joueur():
+    tag interface_personnage
+    frame:
+        xpos 5 ypos 5
+        grid 2 3:
+            xsize 210
+            spacing 5
+            text _("[habilete.m_Id] : ")
+            text _("[habilete.m_Valeur]")
+            text _("[endurance.m_Id] ([endurance.m_Valeur]/[maxEndurance])")
+            bar:
+                value AnimatedValue(endurance.m_Valeur, maxEndurance, 1.0)
+            text _("[chance.m_Id] ([chance.m_Valeur]/[maxChance])")
+            bar:
+                value AnimatedValue(chance.m_Valeur, maxChance, 1.0)
