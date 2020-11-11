@@ -1,30 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/perso_ldoelh.rpy", line 4, in script
-    init -1 python:
-  File "game/perso_ldoelh.rpy", line 41, in <module>
-    discipline = DisciplineAleatoire()
-  File "game/perso_ldoelh.rpy", line 38, in DisciplineAleatoire
-    carac = carac.Carac("Discipline", discipline)
-UnboundLocalError: local variable 'carac' referenced before assignment
+  File "game/numeros1_40.rpy", line 8, in script
+    jump numero10
+ScriptError: could not find label 'numero10'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/perso_ldoelh.rpy", line 4, in script
-    init -1 python:
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/perso_ldoelh.rpy", line 41, in <module>
-    discipline = DisciplineAleatoire()
-  File "game/perso_ldoelh.rpy", line 38, in DisciplineAleatoire
-    carac = carac.Carac("Discipline", discipline)
-UnboundLocalError: local variable 'carac' referenced before assignment
+  File "game/numeros1_40.rpy", line 8, in script
+    jump numero10
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'numero10'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
- 
-Wed Nov 11 19:57:41 2020
+L'épée du samouraï 1.0
+Wed Nov 11 21:10:28 2020

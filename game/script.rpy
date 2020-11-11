@@ -4,12 +4,7 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
 # Déclarez les personnages utilisés dans le jeu.
-define e = Character('Eileen', color="#c8ffc8")
-
-init -10 python:
-    from despin.abs import carac
-
-    caracTest = carac.Carac("monId", "MaValeur")
+define s = Character('Shogun', color="#580404")
 
 label start:
 
@@ -18,7 +13,7 @@ label start:
     scene bg campagne_japonaise
     show screen profil_joueur
     # jump de test tmp ci après
-    jump choix_discipline
+    jump resume_debut_histoire
     # sélection de la compétence de combat de base
     "En tant que Samouraï, vous êtes passé maître dans une des quatre disciplines décrites ci-après."
     "Au cours de l'aventure, il vous sera précisé, en temps voulu, d'utiliser la discipline dans laquelle vous excellez ou de prendre en considération les effets de cette discipline sur le déroulement d'un combat."
@@ -66,6 +61,42 @@ label description_honneur:
     "De plus, votre Honneur aura une influence sur le déroulement des événements ;"
     "selon son niveau, vous serez à même d'entreprendre ou non certaines actions."
     "Si votre Honneur se trouve réduit à 0 au cours de votre mission, rendez-vous immédiatement au 99, et cela quels que soient les événements en cours."
+
+label resume_debut_histoire:
+    "L'empire du Titan se compose de trois continents principaux : l'Allansia, le Balkabad et le Khâl."
+    "C'est sur la côte est du Khâl que s'étend le Tochimin ;"
+    "cet état, bordé d'un côté par la mer et de l'autre par les montagnes, se trouve complètement isolé du reste du continent."
+    "Le Tochimin a pour capitale Konichi et est gouverné par le Shogun Kihei Hasekawa."
+    "Vous êtes un jeune Samouraï et vous avez fidèlement suivi l'enseignement du Bushido, la Voie du Guerrier, ainsi que le Kenjutsu, la Voie du Sabre."
+    "Au Tochimin, nombreux sont ceux qui vous considèrent comme le sujet le plus habile et le plus valeureux de toute la garde du Shogun."
+    "Cela vous a valu le titre de « Senseï », ou Maître du Sabre. Un jour, le Shogun vous convoque et vous informe d'une terrible nouvelle :"
+    show shogun at right
+    with moveinright
+    s "Le Tochimin court un grand danger !"
+    s "Je suis en train de perdre peu à peu le contrôle du pays, car certains seigneurs cherchent à se détacher de mon royaume afin de former des états indépendants ;"
+    s "ceux qui ont rompu l'alliance complotent déjà contre moi."
+    s "Par ailleurs, des hordes de bandits parcourent le pays en toute liberté et les envahisseurs barbares, connaissant notre faiblesse et notre isolement, ont déjà fait une incursion à nos frontières."
+    s "Pourquoi en sommes-nous arrivés à cette dramatique situation ?"
+    s "Eh bien, tout simplement parce que la Dai-Katana, la grande Épée connue sous le nom de Mort Joyeuse, m'a été dérobée !"
+    s "Mort Joyeuse est une arme magique, réputée pour conférer de grands pouvoirs à son possesseur."
+    s "On dit qu'elle est l'âme du Tochimin."
+    s "Celui qui brandira Mort Joyeuse et saura en percer le secret pourra s'emparer du pays."
+    s "Plusieurs seigneurs savent que je n'ai plus le droit de gouverner sans cette épée."
+    s "Certains d'entre eux cherchent à s'en emparer pour eux-mêmes, mais d'autres ont déjà fait serment d'allégeance à celui qui la détient abusivement."
+    s "En l'occurrence, le détenteur en question ne pourrait être pire : il s'agit d'Ikiru, Maître des Ombres ;"
+    s "un chien sans âme qui se tapit au fin fond des montagnes, dans un repaire connu sous le nom d'Onikaru : le Gouffre des Démons."
+    s "Maintenant que l Epée est en sa possession, les Bakemono-Sho et les Shikomes — deux races de guerriers sans foi ni loi — sont en train de se rassembler sous sa bannière."
+    s "Je sais également qu'il a convoqué les Shuras, de redoutables guerriers-fantômes qui se cachent au plus profond du Gouffre, afin d'obtenir leur aide."
+    s "Bientôt, s'il découvre le secret de l'Épée, Ikiru envahira notre beau pays, royaume de la douceur de vivre et des cerisiers en fleurs."
+    s "Tu es animé du Senki, l'esprit de guerre, et c'est à toi, mon Senseï, que je confie cette mission : va à Onikaru, emporte la victoire sur Ikiru et rapporte-moi Mort Joyeuse."
+    s "Cela sera loin d'être facile, car pour vaincre Ikiru et anéantir ses alliés sortis tout droit de Fenfer, il te faudra découvrir le secret de Mort Joyeuse."
+    s "Je ne puis te le révéler moi-même, car il est écrit que celui qui dévoilera le mystère de son plein gré sera damné pour l'éternité, et Mort Joyeuse disparaîtrait à tout jamais du monde des hommes."
+    s "Tu devras donc résoudre seul cette énigme."
+    s "Je prierai les dieux pour qu'ils accordent le succès à ton entreprise et je m'adresserai tout particulièrement à Hotei, dieu de la Chance !"
+    s "À présent, prends ceci : c'est le Sceau du Shogun, qui te permettra de traverser, sain et sauf, les régions qui me sont encore fidèles et loyales."
+    hide shogun
+    with Dissolve(.5)
+    jump numero1
 
 
 

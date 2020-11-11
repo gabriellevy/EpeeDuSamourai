@@ -24,24 +24,6 @@ init -1 python:
     disciplineKarumijutsu = "Karumijutsu"
     disciplineNitoKenjutsu = "Ni-to-Kenjutsu"
 
-    def DisciplineAleatoire():
-        global disciplineKyujutsu, disciplineIaijutsu, disciplineKarumijutsu, disciplineNitoKenjutsu
-        val = random.randint(1, 4)
-        discipline = "tmp"
-        if val == 1:
-            discipline = disciplineKyujutsu
-        elif val == 2:
-            discipline = disciplineIaijutsu
-        elif val == 3:
-            discipline = disciplineKarumijutsu
-        elif val == 4:
-            discipline = disciplineNitoKenjutsu
-
-        caracDiscipline = carac.Carac("Discipline", discipline)
-        return caracDiscipline
-
-    discipline = DisciplineAleatoire()
-
     # arc :
     def Kyujutsu():
         global discipline, disciplineKyujutsu, flechesSaule, flechesHarpon, flechesPerforantes, flechesHurleuses
@@ -50,15 +32,33 @@ init -1 python:
         flechesPerforantes.m_Valeur = 3
         flechesHurleuses.m_Valeur = 3
         discipline = carac.Carac("Discipline", disciplineKyujutsu)
+        return discipline
 
     def Iaijutsu():
         global discipline, disciplineIaijutsu
         discipline = carac.Carac("Discipline", disciplineIaijutsu)
+        return discipline
 
     def Karumijutsu():
         global discipline, disciplineKarumijutsu
         discipline = carac.Carac("Discipline", disciplineKarumijutsu)
+        return discipline
 
     def NitoKenjutsu():
         global discipline, disciplineNitoKenjutsu
         discipline = carac.Carac("Discipline", disciplineNitoKenjutsu)
+        return discipline
+
+    def DisciplineAleatoire():
+        global disciplineKyujutsu, disciplineIaijutsu, disciplineKarumijutsu, disciplineNitoKenjutsu
+        val = random.randint(1, 4)
+        if val == 1:
+            return Kyujutsu()
+        elif val == 2:
+            return Iaijutsu()
+        elif val == 3:
+            return Karumijutsu()
+
+        return NitoKenjutsu()
+
+    discipline = DisciplineAleatoire()
