@@ -6,6 +6,7 @@
 # Déclarez les personnages utilisés dans le jeu.
 define s = Character('Shogun', color="#580404")
 define t = Character('Tatsu', color="#e30909")
+define d = Character('Dai-Oni', color="#2b1323")
 
 label start:
 
@@ -99,7 +100,8 @@ label resume_debut_histoire:
     with Dissolve(.5)
     jump numero1
 
-
+label mort:
+    "Vous êtes mort."
 
 
 

@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/numeros1_40.rpy", line 42: expected menuitem
-    $ texteResultatChance = TentezVotreChance()
-    ^
+File "game/perso_ldoelh.rpy", line 42: invalid syntax
+            jump renpy.jump(mort)
+                      ^
+    
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Nov 12 22:59:18 2020
+Thu Nov 12 23:59:48 2020

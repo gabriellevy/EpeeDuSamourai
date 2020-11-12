@@ -29,6 +29,25 @@ init -1 python:
     maxChance = chance.m_Valeur
     chanceux = True # true si le dernier lancer a donné comme résultat "chanceux"
 
+    def GainDeChance(num):
+        global chance, maxChance
+        chance.m_Valeur = chance.m_Valeur + num
+        if chance > maxChance:
+            chance = maxChance
+
+    def GainEndurance(num):
+        global endurance, maxEndurance
+        endurance.m_Valeur = endurance.m_Valeur + num
+        if endurance > maxEndurance:
+            endurance = maxEndurance
+
+    def PerteEndurance(num):
+        global endurance
+        endurance.m_Valeur = endurance.m_Valeur - num
+        if endurance.m_Valeur <= 0:
+            endurance.m_Valeur = 0
+            renpy.jump("mort")
+
     def TentezVotreChance():
         global chance, chanceux
         jet = random.randint(1, 6) + random.randint(1, 6)
