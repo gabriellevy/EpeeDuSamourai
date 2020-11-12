@@ -5,11 +5,11 @@ init -1 python:
     import random
     from despin.abs import carac
 
-    habilete = carac.Carac("Habileté", random.randint(7, 12))
+    habilete = carac.Carac("Habileté de base", random.randint(7, 12))
+    habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
+    aUnKatana = True
     endurance = carac.Carac("Endurance", 12 + random.randint(1, 6) + random.randint(1, 6))
     maxEndurance = endurance.m_Valeur
-    chance = carac.Carac("Chance", 6 + random.randint(1, 6))
-    maxChance = chance.m_Valeur
     maxRepas = 10
     repas = carac.Carac("Repas", maxRepas)
     honneur = carac.Carac("Honneur", 3)
@@ -23,6 +23,25 @@ init -1 python:
     disciplineIaijutsu = "Iaijutsu"
     disciplineKarumijutsu = "Karumijutsu"
     disciplineNitoKenjutsu = "Ni-to-Kenjutsu"
+
+    # chance
+    chance = carac.Carac("Chance", 6 + random.randint(1, 6))
+    maxChance = chance.m_Valeur
+    chanceux = True # true si le dernier lancer a donné comme résultat "chanceux"
+
+    def TentezVotreChance():
+        global chance, chanceux
+        jet = random.randint(1, 6) + random.randint(1, 6)
+        texte = "rien encore"
+        if jet <= chance:
+            chanceux = True
+            texte = "{} est inférieur ou égal à votre chance de {} : vous êtes chanceux !".format(jet, chance)
+        else:
+            chanceux = False
+            texte = "{} est inférieur ou égal à votre chance de {} : vous êtes chanceux !".format(jet, chance)
+        chance.m_Valeur = chance.m_Valeur - 1
+        return texte
+
 
     # arc :
     def Kyujutsu():
@@ -60,5 +79,13 @@ init -1 python:
             return Karumijutsu()
 
         return NitoKenjutsu()
+
+    def CalculerHabilete():
+        global habilete, habileteCalculee
+
+        habileteCalculee.m_Valeur = habilete.m_Valeur
+        if not aUnKatana:
+            habileteCalculee.m_Valeur -= 1
+        return habileteCalculee
 
     discipline = DisciplineAleatoire()

@@ -1538,8 +1538,8 @@ screen profil_joueur():
         grid 2 5:
             xsize 210
             spacing 5
-            text _("[habilete.m_Id] : ")
-            text _("[habilete.m_Valeur]")
+            text _("[habileteCalculee.m_Id] : ")
+            text _("[habileteCalculee.m_Valeur]")
             text _("[endurance.m_Id] ([endurance.m_Valeur]/[maxEndurance])")
             bar:
                 value AnimatedValue(endurance.m_Valeur, maxEndurance, 1.0)
