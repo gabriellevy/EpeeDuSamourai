@@ -107,6 +107,7 @@ label numero8:
     "La voix tonitruante du Dai-Oni s'évanouit peu à peu dans l'espace, et vous vous retrouvez seul, égaré dans cette immensité silencieuse."
     "De toute évidence, vous n'avez pas le choix : il vous faudra, tôt ou tard, prendre part au Tournoi de l'Espace."
     "En inspectant les portes, vous remarquez qu'elles comportent toutes une inscription."
+label numero8_choix:
     menu:
         "Laquelle allez-vous ouvrir en premier :"
         "Le Pinacle des Hauteurs Suprêmes ?":
@@ -154,10 +155,23 @@ label numero11:
     jump numero15
 
 label numero12:
-    # jouter un perso affiché "Tatsu!"
+    show tatsu at right
     t "Ainsi, s'exclame le Tatsu d'une voix tonitruante, tu as réussi à tenir bon jusqu'au Tournoi de l'Espace !"
     t "Je te félicite d'un tel exploit, mortel, et j'ai décidé de t'aider à combattre le Dai-Oni, car je souhaite moi aussi la défaite d'Ikiru, Maître des Ombres."
     t "Lorsque tu franchiras la porte de l'Arène Hors du Temps, je serai donc là pour me battre à tes côtés."
+    hide tatsu
+    with dissolve
     "Sur ces mots, le Tatsu s'évanouit dans les airs. Il ne vous reste plus maintenant qu'à retourner au Centre des Univers en passant par la porte qui se trouve derrière vous."
-    # N'oubliez pas de noter que vous avez gagné le Tatsu à votre cause
-    # avant de revenir au 8 pour y choisir une nouvelle option
+    $ soutienTatsu = True
+    jump numero8_choix
+
+label numero13:
+    "Trois des monstres écailleux passent soudain à l'offensive et se précipitent sur vous toutes griffes dehors. Affrontez-les l'un après l'autre :"
+    $ nouveauCombat(True)
+    $ AjouterEnnemi("Premier KAPPA", 8, 14)
+    $ AjouterEnnemi("Deuxième KAPPA", 8, 12)
+    $ AjouterEnnemi("Troisième KAPPA", 7, 13)
+    $ CommencerCombat("numero31")
+
+label numero31:
+    "tmp pas fait !"

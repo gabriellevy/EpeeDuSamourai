@@ -24,6 +24,9 @@ init -1 python:
     disciplineKarumijutsu = "Karumijutsu"
     disciplineNitoKenjutsu = "Ni-to-Kenjutsu"
 
+    # soutiens lors du tournoi de l'espace
+    soutienTatsu = False
+
     # chance
     chance = carac.Carac("Chance", 6 + random.randint(1, 6))
     maxChance = chance.m_Valeur

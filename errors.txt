@@ -2,10 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/perso_ldoelh.rpy", line 42: invalid syntax
-            jump renpy.jump(mort)
-                      ^
+File "game/combat_ldoelh.rpy", line 5: unexpected indent
+        import random
+        ^
     
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Thu Nov 12 23:59:48 2020
+Fri Nov 13 19:56:07 2020

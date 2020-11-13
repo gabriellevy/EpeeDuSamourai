@@ -1,22 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/numeros1_40.rpy", line 81, in script
-    jump numero195
-ScriptError: could not find label 'numero195'.
+  File "game/combat_ldoelh.rpy", line 74, in script
+    $ texteTourCombat = TourDeCombat()
+  File "game/combat_ldoelh.rpy", line 74, in <module>
+    $ texteTourCombat = TourDeCombat()
+  File "game/combat_ldoelh.rpy", line 53, in TourDeCombat
+    texte = texte + "\n\{color=#00ff00}{} est blessé et perd {} d'enduranc.\{/color}".format(ennemi.m_Nom, degats)
+KeyError: u'color=#00ff00'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/numeros1_40.rpy", line 81, in script
-    jump numero195
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
-    rv = renpy.game.script.lookup(target)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'numero195'.
+  File "game/combat_ldoelh.rpy", line 74, in script
+    $ texteTourCombat = TourDeCombat()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/combat_ldoelh.rpy", line 74, in <module>
+    $ texteTourCombat = TourDeCombat()
+  File "game/combat_ldoelh.rpy", line 53, in TourDeCombat
+    texte = texte + "\n\{color=#00ff00}{} est blessé et perd {} d'enduranc.\{/color}".format(ennemi.m_Nom, degats)
+KeyError: u'color=#00ff00'
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 L'épée du samouraï 1.0
-Fri Nov 13 00:13:20 2020
+Fri Nov 13 22:47:24 2020
