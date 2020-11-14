@@ -1,30 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/combat_ldoelh.rpy", line 74, in script
-    $ texteTourCombat = TourDeCombat()
-  File "game/combat_ldoelh.rpy", line 74, in <module>
-    $ texteTourCombat = TourDeCombat()
-  File "game/combat_ldoelh.rpy", line 53, in TourDeCombat
-    texte = texte + "\n\{color=#00ff00}{} est blessé et perd {} d'enduranc.\{/color}".format(ennemi.m_Nom, degats)
-KeyError: u'color=#00ff00'
+  File "game/combat_ldoelh.rpy", line 90, in script
+    $ TesterFinCombat()
+  File "game/combat_ldoelh.rpy", line 90, in <module>
+    $ TesterFinCombat()
+  File "game/combat_ldoelh.rpy", line 41, in TesterFinCombat
+    if testFinCombat():
+NameError: global name 'testFinCombat' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/combat_ldoelh.rpy", line 74, in script
-    $ texteTourCombat = TourDeCombat()
+  File "game/combat_ldoelh.rpy", line 90, in script
+    $ TesterFinCombat()
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
     exec bytecode in globals, locals
-  File "game/combat_ldoelh.rpy", line 74, in <module>
-    $ texteTourCombat = TourDeCombat()
-  File "game/combat_ldoelh.rpy", line 53, in TourDeCombat
-    texte = texte + "\n\{color=#00ff00}{} est blessé et perd {} d'enduranc.\{/color}".format(ennemi.m_Nom, degats)
-KeyError: u'color=#00ff00'
+  File "game/combat_ldoelh.rpy", line 90, in <module>
+    $ TesterFinCombat()
+  File "game/combat_ldoelh.rpy", line 41, in TesterFinCombat
+    if testFinCombat():
+NameError: global name 'testFinCombat' is not defined
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 L'épée du samouraï 1.0
-Fri Nov 13 22:47:24 2020
+Sat Nov 14 13:29:22 2020

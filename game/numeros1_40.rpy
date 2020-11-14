@@ -171,6 +171,7 @@ label numero13:
     $ AjouterEnnemi("Premier KAPPA", 8, 14)
     $ AjouterEnnemi("Deuxième KAPPA", 8, 12)
     $ AjouterEnnemi("Troisième KAPPA", 7, 13)
+    $ SetFinCombatTesterEnduranceRestanteEnnemi(4)
     $ CommencerCombat("numero31")
 
 label numero31:

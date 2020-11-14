@@ -6,17 +6,15 @@ init -2 python:
 
     unApresLautre_ = True
     ennemis_ = list()
-    jumpFinCombat_ = ""
-
-    def nouveauCombat(unApresLautre):
-        unApresLautre_ = unApresLautre
-        ennemis_.clear()
+    jumpFinCombat_ = "???"
+    valEnduranceRestanteEnnemi_ = 0 # valeur à partir de laquelle le combat est considéré termié (endurance restante)
 
     def AjouterEnnemi(nom, habilete, endurance):
         nouvEnnemi = ennemi.Ennemi(nom, habilete, endurance)
         ennemis_.append(nouvEnnemi)
 
     def CommencerCombat(jumpFinCombat):
+        global jumpFinCombat_
         jumpFinCombat_ = jumpFinCombat
         renpy.jump("debutCombat")
 
@@ -27,11 +25,37 @@ init -2 python:
             texte += "\n"
         return texte
 
+    def TesterFinCombatPlusDennemis():
+        global ennemis_
+        return len(ennemis_) == 0
+
+    def TesterFinCombaDennemiEnduranceRestante():
+        global ennemis_, valEnduranceRestanteEnnemi_
+        return ennemis_[0].m_Endurance <= valEnduranceRestanteEnnemi_
+
+    def SetFinCombatTesterEnduranceRestanteEnnemi(val):
+        """
+        à appeler si on veut que le combat s'arrête quand l'ennemi se retrouve avec son endurance inférieur ou égale à val
+        """
+        global testFinCombat_, valEnduranceRestanteEnnemi_
+        valEnduranceRestanteEnnemi_ = val
+        testFinCombat_ = TesterFinCombaDennemiEnduranceRestante
+
+    # fonction à appeler pour tester si le combat est terminé ( par défaut oui si il n'y a plus d'ennemis)
+    testFinCombat_ = TesterFinCombatPlusDennemis
+
+    def nouveauCombat(unApresLautre):
+        global unApresLautre_, testFinCombat_
+        unApresLautre_ = unApresLautre
+        testFinCombat_ = TesterFinCombatPlusDennemis
+        ennemis_.clear()
+
     def TesterFinCombat():
-        if len(ennemis_) > 0:
-            renpy.jump("debutTourDeCombat")
-        else:
+        global jumpFinCombat_, testFinCombat_
+        if testFinCombat_():
             renpy.jump(jumpFinCombat_)
+        else:
+            renpy.jump("debutTourDeCombat")
 
     def LancerDe():
         return random.randint(1, 6)
