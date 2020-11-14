@@ -1,30 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/combat_ldoelh.rpy", line 90, in script
-    $ TesterFinCombat()
-  File "game/combat_ldoelh.rpy", line 90, in <module>
-    $ TesterFinCombat()
-  File "game/combat_ldoelh.rpy", line 41, in TesterFinCombat
-    if testFinCombat():
-NameError: global name 'testFinCombat' is not defined
+  File "game/numeros1_40.rpy", line 190, in script
+    jump numero46
+ScriptError: could not find label 'numero46'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/combat_ldoelh.rpy", line 90, in script
-    $ TesterFinCombat()
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 914, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\python.py", line 2028, in py_exec_bytecode
-    exec bytecode in globals, locals
-  File "game/combat_ldoelh.rpy", line 90, in <module>
-    $ TesterFinCombat()
-  File "game/combat_ldoelh.rpy", line 41, in TesterFinCombat
-    if testFinCombat():
-NameError: global name 'testFinCombat' is not defined
+  File "game/numeros1_40.rpy", line 190, in script
+    jump numero46
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
+    rv = renpy.game.script.lookup(target)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'numero46'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 L'épée du samouraï 1.0
-Sat Nov 14 13:29:22 2020
+Sat Nov 14 17:23:59 2020

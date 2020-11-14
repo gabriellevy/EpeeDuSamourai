@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/combat_ldoelh.rpy", line 5: unexpected indent
-        import random
-        ^
-    
+File "game/numeros1_40.rpy", line 193: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "avancer ouvertement vers eux et prétendre que vous avez un message important pour le seigneur Tsietsin"
+                                                                                                            ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Nov 13 19:56:07 2020
+Sat Nov 14 17:17:20 2020

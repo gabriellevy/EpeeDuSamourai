@@ -174,5 +174,23 @@ label numero13:
     $ SetFinCombatTesterEnduranceRestanteEnnemi(4)
     $ CommencerCombat("numero31")
 
-label numero31:
-    "tmp pas fait !"
+label numero14:
+    "Le conducteur se dirige vers les écuries pour y garer sa charrette, puis il s'éloigne à pas lourds, marmonnant dans sa barbe qu'il se sent la gorge sèche après cette longue journée de labeur."
+    "Après son départ, vous vous glissez rapidement hors de votre cachette et vous inspectez les alentours."
+    "Au bout de la grande cour carrée se dresse un édifice en pierre orné de pignons finement sculptés et surmonté d'un toit en pagode."
+    "Il s'agit vraisemblablement du palais du seigneur Tsietsin."
+    "En continuant votre observation, vous remarquez que les portes de cette riche demeure sont flanquées de deux gardes qui retiennent immédiatement toute votre attention."
+    "Ce sont des Shikomes, d'abominables humanoïdes, poilus comme des singes, pourvus de griffes acérées et affligés d'un gros groin épaté."
+    "Ils portent des cuirasses sales et déchirées — de mauvaises imitations de tenue de samouraï— mais leurs armes, en revanche, semblent en parfait état."
+    "La présence de telles créatures en ces lieux prouve évidemment que Tsietsin s'est allié à Ikiru, Maître des Ombres."
+    "Tsietsin devant être dans son palais en ce moment, il est primordial de vous débarrasser de lui avant toute chose."
+    "Vous attendez que la nuit tombe avant d'entrer en action."
+    menu:
+        "Grâce à l'art du Kyujutsu, vous pouvez tenter de supprimer les deux Shikomes en leur portant à chacun un seul coup mortel" if disciplineKyujutsu == discipline.m_Valeur:
+            jump numero46
+        "vous pouvez essayer de vous approcher furtivement afin de les attaquer par surprise":
+            jump numero64
+        "avancer ouvertement vers eux et prétendre que vous avez un message important pour le seigneur Tsietsin":
+            jump numero84
+        "vous pouvez marcher d'un pas décidé vers le palais et passer d'un air autoritaire, comme si les gardes n'existaient pas":
+            jump numero100
