@@ -29,6 +29,7 @@ init -1 python:
 
     # soutiens lors du tournoi de l'espace
     soutienTatsu = False
+    soutienKiRin = False
 
     # chance
     chance = carac.Carac("Chance", 6 + random.randint(1, 6))

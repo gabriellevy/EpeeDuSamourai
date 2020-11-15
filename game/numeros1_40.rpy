@@ -249,3 +249,37 @@ label numero19:
 
 label numero20:
     "Le geôlier s'approche de vous en grommelant d'un air ennuyé."
+    menu:
+        "Tentez votre Chance."
+        "Lancer deux dés":
+            $ texteResultatChance = TentezVotreChance()
+    "[texteResultatChance]"
+    if chanceux:
+        jump numero282
+    else:
+        jump numero296
+
+label numero21:
+    "La flèche fend l'air en filant droit vers la poitrine d'un des deux monstres, mais le sifflement menaçant qu'elle produit dans sa course ne paraît pas les impressionner le moins du monde."
+    "L'autre se jette sur vous et parvient à vous lacérer de ses griffes palmées, tandis que vous vous efforcez désespérément de reculer tout au bout de la jetée en pierre."
+    "Vous perdez 3 points d'ENDURANCE. La démarche entravée par le harcèlement du monstre, vous glissez maladroitement et vous perdez l'équilibre."
+    $ PerteEndurance(3)
+    "En désespoir de cause, vous décidez de plonger dans les eaux blanches et écumeuses qui rugissent sous le gué."
+    jump numero49
+
+label numero22:
+    "Éléonore avance d'un pas et un violent éclair bleu jaillit de ses mains tendues en avant."
+    "La décharge vient frapper Gargantus en plein visage, et ses yeux de rubis explosent comme deux billes de verre."
+    "Dans un hurlement de douleur retentissant, le monstre s'effondre sur le sol où il reste inerte, aussi raide et immobile qu'une statue de bronze."
+    "Eléonore se tourne alors vers vous et dit : -J'ai payé ma dette envers vous, mais maintenant je dois partir."
+    "Je vous souhaite bonne chance, guerrier ! Sur un dernier signe de la main, elle s'éloigne et dis-paraît pour s'en retourner d'où elle était mystérieusement venue."
+    "C'est alors que le Dai-Oni s'adresse à vous :"
+    show daioni at right
+    with moveinright
+    d "Tu t'en es bien sorti, mortel, mais à présent, pré- pare-toi à mourir de ma propre main !"
+    "Sur ces mots, il avance sur vous en faisant tournoyer un tetsubo, redoutable fléau d'arme hérissé de pointes tranchantes."
+    menu:
+        "envoyer le Ki-Rin combattre le Dai-Oni" if soutienKiRin:
+            jump numero394
+        "affronter, seul, le Dai-Oni":
+            jump numero292
