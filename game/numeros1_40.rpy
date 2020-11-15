@@ -194,3 +194,58 @@ label numero14:
             jump numero84
         "vous pouvez marcher d'un pas décidé vers le palais et passer d'un air autoritaire, comme si les gardes n'existaient pas":
             jump numero100
+
+label numero15:
+    "Vous sortez à l'autre bout du village, à l'opposé du chemin que vous aviez pris pour y entrer."
+    "Personne ne semble avoir remarqué votre fuite, et vous en éprouvez un vif soulagement : il y avait décidément quelque chose d'inquiétant chez ces villageois..."
+    "Mais soudain, à votre grande stupéfaction, vous apercevez le vieux charbonnier que vous aviez rencontré de l'autre côté du village."
+    "Vous l'avez laissé pour mort, il n'y a pas si longtemps, et le voilà maintenant qui vous observe en grimaçant derrière un mur !"
+    "N'en croyant pas vos yeux, vous faites un pas en avant, mais vous vous arrêtez net en voyant soudain la tête de l'homme se détacher de son corps et se mettre à planer dans les airs !"
+    "Vous poussez un cri d'effroi en comprenant qu'il s'agit d'un Rokuro-Kubi, un mort vivant dont la tête se détache la nuit venue, afin d'aller chasser."
+    "Vous sentez une salive brûlante vous éclabousser le visage lorsque la tête passe en crachant et sifflant au-dessus de vous."
+    "La douleur provoquée par ce poison corrosif est atroce ; vous perdez 2 points d'ENDURANCE."
+    $ PerteEndurance(2)
+    "Le Rokuro-Kubi continue à tournoyer au-dessus de votre tête et vous devez l'affronter en un combat mortel :"
+    $ nouveauCombat(True)
+    $ AjouterEnnemi("ROKURO-KUBI", 7, 8)
+    $ CommencerCombat("numero153")
+
+label numero16:
+    "Il se produit un craquement assourdissant et une lourde herse en fer rouillé s'abat brutalement dans votre dos, à quelques centimètres de l'endroit où vous étiez un instant auparavant !"
+    "Il vous est désormais impossible de rebrousser chemin, aussi vous hâtez-vous de continuer à avancer."
+    "Une odeur fétide vous frappe les narines et vous voyez briller, devant vous, une lumière blafarde."
+    jump numero50
+
+label numero17:
+    "Il vous faut trois jours entiers pour traverser les étendues sauvages et désolées qui vous séparent du marais des Brouillards."
+    "Au cours de ce voyage, vous prenez à peine le temps de vous reposer, ne vous accordant que de brèves haltes afin de ne pas être surpris en terrain découvert par les cavaliers samouraïs au service d'Ikiru."
+    "Quand vous atteignez enfin le marais des Brouillards, l'air semble s'être anormalement rafraîchi, mais vous vous consolez en pensant que cet itinéraire peu recommandé vous permettra d'atteindre le coeur du royaume d'Ikiru avant même que celui-ci n'ait eu vent de votre intrusion."
+    "Peu après, une route pavée vous conduit plein nord vers le delta, ce qui vous arrange parfaitement."
+    "La route court sur une longue chaussée surélevée, entourée de part et d'autre par des lacs et des marécages."
+    "Au fur et à mesure que vous progressez, le brouillard s'épaissit et, bientôt, vous n'y voyez plus qu'à quelques pas devant vous. Finalement, vous arrivez à un croisement."
+    "La route pavée s'enfonce dans le brouillard en obliquant vers le nord-est, et un sentier en terre battue part vers le nord, en direction du puits des Ames, ainsi que l'indique un panneau fléché sur le bord du chemin."
+    "Par ailleurs, une autre digue s'avance, à l'ouest, vers un lac nappé de brume."
+    menu:
+        "vous possédez une carte indiquant la route de la Pagode Écarlate" if cartePagodeEcarlate_:
+            jump numero107
+        "vous n'en avez pas, vous pouvez choisir d'aller soit vers le nord":
+            jump numero285
+        "soit vers l'ouest":
+            jump numero125
+        "ou bien vers le nord-est":
+            jump numero249
+
+label numero18:
+    "Vous montez l'escalier quatre à quatre et vous débouchez dans une petite salle de garde."
+    "Le seul homme qui s'y trouve vous regarde avec une surprise non dissimulée, et vous profitez de sa stupéfaction pour filer comme une flèche sous ses yeux et vous engager dans les longs couloirs du palais."
+    "Mais l'alarme a été donnée ! Pendant un moment, vous offrez une belle course poursuite aux gardes, mais il est impossible de s'échapper de la forteresse de Tsietsin avec tant d'hommes sur vos talons."
+    "Vous vous faites finalement capturer et, après une résistance héroïque mais hélas ! de courte durée —, vous êtes finalement écrasé sous le nombre de vos adversaires et sauvagement mis en pièces."
+
+label numero19:
+    "Le pouvoir du sabre noir incrusté de runes épuise peu à peu vos forces vitales : vous perdez 1 point d'HABlLETÉ et 1 point de CHANCE."
+    $ PerteHabilete(1)
+    $ PerteChance(1)
+    jump numero199
+
+label numero20:
+    "Le geôlier s'approche de vous en grommelant d'un air ennuyé."

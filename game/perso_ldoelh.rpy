@@ -14,6 +14,9 @@ init -1 python:
     repas = carac.Carac("Repas", maxRepas)
     honneur = carac.Carac("Honneur", 3)
 
+    # -------------> infos diverses spécifiques aventure
+    cartePagodeEcarlate_ = False # a une carte qui mène à la pagode écarlate
+
     flechesSaule = carac.Carac("Flèches de saule", 0)
     flechesHarpon = carac.Carac("Flèches harpon", 0)
     flechesPerforantes = carac.Carac("Flèches perforantes", 0)
@@ -38,11 +41,27 @@ init -1 python:
         if chance > maxChance:
             chance = maxChance
 
+    def PerteChance(num):
+        global chance, maxChance
+        chance.m_Valeur = chance.m_Valeur - num
+        if chance.m_Valeur < 0:
+            chance.m_Valeur = 0
+
+    def GainDeHabilete(num):
+        global habilete
+        habilete.m_Valeur = habilete.m_Valeur + num
+
+    def PerteHabilete(num):
+        global habilete
+        habilete.m_Valeur = habilete.m_Valeur - num
+        if habilete.m_Valeur < 0:
+            habilete.m_Valeur = 0
+
     def GainEndurance(num):
         global endurance, maxEndurance
         endurance.m_Valeur = endurance.m_Valeur + num
-        if endurance > maxEndurance:
-            endurance = maxEndurance
+        if endurance.m_Valeur > maxEndurance.m_Valeur:
+            endurance.m_Valeur = maxEndurance.m_Valeur
 
     def PerteEndurance(num):
         global endurance
