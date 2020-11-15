@@ -283,3 +283,18 @@ label numero22:
             jump numero394
         "affronter, seul, le Dai-Oni":
             jump numero292
+
+# ------------------------------------------------------------------------------> plein de numéros pas faits :
+
+label numero34:
+    "Vous avancez d'un pas résolu sur la piste poussiéreuse, mais vous accélérez l'allure en entendant des hurlements de terreur en provenance du village."
+    "C'est alors que vous apercevez une bande de cavaliers — probablement des bandits — en train de charger des villageois en proie à la panique la plus totale."
+    "Pendant un instant, un bosquet d'arbres vous empêche de suivre la scène."
+    "A peine l'avez-vous contourné que vous voyez un cavalier galoper à bride abattue dans votre direction."
+    "C'est un samouraï armé d'une longue lance et portant l'armure en laque bleu et vert du daïmyo Tsietsin, un seigneur des environs."
+    menu:
+        "Qu'allez-vous faire :"
+        "vous précipiter à sa rencontre en exhibant le sceau du Shogun, et lui ordonner de vous expliquer ce qui se passe":
+            jump numero44
+        "ou attendre de pied ferme qu'il arrive à votre hauteur":
+            jump numero56

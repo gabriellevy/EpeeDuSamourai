@@ -8,14 +8,18 @@ define s = Character('Shogun', color="#580404")
 define t = Character('Tatsu', color="#e30909")
 define d = Character('Dai-Oni', color="#2b1323")
 
+# musiques
+define audio.musique_douce = "musique/Beautiful Chinese Music - Chinese Zither and Bamboo Flute 2.mp3"
+
 label start:
 
 # mise en place des caractéristiques et des objets
 # la vraie initialisation du perso est dans perso_ldoelh.rpy
     scene bg campagne_japonaise
+    play music musique_douce
     show screen profil_joueur
     # jump de test tmp ci après
-    jump numero14
+    # jump numero14
     # sélection de la compétence de combat de base
     "En tant que Samouraï, vous êtes passé maître dans une des quatre disciplines décrites ci-après."
     "Au cours de l'aventure, il vous sera précisé, en temps voulu, d'utiliser la discipline dans laquelle vous excellez ou de prendre en considération les effets de cette discipline sur le déroulement d'un combat."
