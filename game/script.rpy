@@ -4,9 +4,11 @@
 # ex: image eileen heureuse = "eileen_heureuse.png"
 
 # Déclarez les personnages utilisés dans le jeu.
-define s = Character('Shogun', color="#580404")
+define s = Character('Shogun Kihei Hasekawa', who_outlines=[(2, "#894646",1,1)], color="#580404")
 define t = Character('Tatsu', color="#e30909")
 define d = Character('Dai-Oni', color="#2b1323")
+define hp = Character('Pilote', color="#251f99")
+define narrator = Character(color="#fafad8", what_italic=True)
 
 # musiques
 define audio.musique_douce = "musique/Beautiful Chinese Music - Chinese Zither and Bamboo Flute 2.mp3"
@@ -76,7 +78,7 @@ label resume_debut_histoire:
     "Vous êtes un jeune Samouraï et vous avez fidèlement suivi l'enseignement du Bushido, la Voie du Guerrier, ainsi que le Kenjutsu, la Voie du Sabre."
     "Au Tochimin, nombreux sont ceux qui vous considèrent comme le sujet le plus habile et le plus valeureux de toute la garde du Shogun."
     "Cela vous a valu le titre de « Senseï », ou Maître du Sabre. Un jour, le Shogun vous convoque et vous informe d'une terrible nouvelle :"
-    play sound "audio/son_choix.mp3"
+    play sound "audio/gong_aigu_jap.mp3"
     show shogun at right
     with moveinright
     s "Le Tochimin court un grand danger !"

@@ -295,6 +295,34 @@ label numero23:
     $ GainHonneur(1)
     jump numero195
 
+label numero24:
+    "Vous pressez le pas et, laissant le village loin derrière vous, vous traversez l'étendue onduleuse des terres labourées."
+    "Quelque temps après, la grand-route passe au pied d'une colline. En la contournant, vous voyez se dresser un château fortifié non loin de la route."
+    "Vous reconnaissez l'étendard qui flotte en haut des remparts : ce sont les couleurs du seigneur Tsietsin, puissant daïmyo local."
+    menu:
+        "Si vous avez déjà rencontré des soldats de Tsietsin":
+            jump numero314
+        "Si tel n'est pas le cas":
+            jump numero326
+
+label numero25:
+    "Alourdi par le poids de votre armure, vous vous enfoncez profondément dans les eaux glacées du puits."
+    "En vous débarrassant de votre lourde cuirasse, peut-être parviendrez-vous à remonter vers la surface à temps ?"
+    "Hélas ! vos poumons sont sur le point d'exploser et vos forces vous abandonnent peu à peu."
+    if endurance.m_Valeur <= 12:
+        jump numero353
+    else:
+        jump numero313
+
+label numero26:
+    t "-Non, mortel, ce n'est pas la bonne réponse"
+    "dit le Tatsu en se pourléchant d'avance les babines."
+    t "Et maintenant... je vais te dévorer !"
+    "Dans un grognement vorace, le dragon s'élance vers vous en faisant claquer ses mâchoires. Si vous ne voulez pas être mangé tout cru, il vous faut affronter sans délai cet adversaire gargantuesque :"
+    $ nouveauCombat(True)
+    $ AjouterEnnemi("TATSU", 11, 13)
+    $ CommencerCombat("numero42")
+
 # ------------------------------------------------------------------------------> plein de numéros pas faits :
 
 label numero34:
