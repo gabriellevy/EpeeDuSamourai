@@ -19,7 +19,7 @@ label start:
     play music musique_douce
     show screen profil_joueur
     # jump de test tmp ci après
-    # jump numero14
+    jump choix_discipline
     # sélection de la compétence de combat de base
     "En tant que Samouraï, vous êtes passé maître dans une des quatre disciplines décrites ci-après."
     "Au cours de l'aventure, il vous sera précisé, en temps voulu, d'utiliser la discipline dans laquelle vous excellez ou de prendre en considération les effets de cette discipline sur le déroulement d'un combat."
@@ -76,6 +76,7 @@ label resume_debut_histoire:
     "Vous êtes un jeune Samouraï et vous avez fidèlement suivi l'enseignement du Bushido, la Voie du Guerrier, ainsi que le Kenjutsu, la Voie du Sabre."
     "Au Tochimin, nombreux sont ceux qui vous considèrent comme le sujet le plus habile et le plus valeureux de toute la garde du Shogun."
     "Cela vous a valu le titre de « Senseï », ou Maître du Sabre. Un jour, le Shogun vous convoque et vous informe d'une terrible nouvelle :"
+    play sound "audio/son_choix.mp3"
     show shogun at right
     with moveinright
     s "Le Tochimin court un grand danger !"

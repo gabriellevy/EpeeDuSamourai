@@ -90,8 +90,8 @@ define gui.title_text_size = 50
 ## Menu du jeu et menu principal ###############################################
 
 ## Les images utilisées pour le menu principal et le menu du jeu.
-define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.main_menu_background = "images/bg campagne_japonaise.jpg"
+define gui.game_menu_background = "images/bg campagne_japonaise.jpg"
 
 
 ## Dialogue ####################################################################
@@ -485,6 +485,3 @@ init python:
 
         gui.nvl_button_width = 1240
         gui.nvl_button_xpos = 20
-
-
-

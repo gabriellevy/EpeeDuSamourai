@@ -1,31 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 24, in script
-    "En tant que Samouraï, vous êtes passé maître dans une des quatre disciplines décrites ci-après."
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
-IOError: Couldn't find file 'musique/Beautiful Chinese Music - Chinese Zither and Bamboo Flute 2.mp3'.
+  File "game/script.rpy", line 64, in script
+    "En tant que Samouraï du Shogun, l'Honneur est pour vous une vertu primordiale."
+IOError: Couldn't find file 'audio/gong_grave_leger.mp3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 24, in script
-    "En tant que Samouraï, vous êtes passé maître dans une des quatre disciplines décrites ci-après."
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 671, in execute
-    statement_name("say")
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 45, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 98, in _window_auto_callback
-    _window_show()
-  File "renpy/common/000window.rpy", line 60, in _window_show
-    renpy.with_statement(trans)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1601, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2251, in do_with
-    clear=clear)
+  File "game/script.rpy", line 64, in script
+    "En tant que Samouraï du Shogun, l'Honneur est pour vous une vertu primordiale."
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 708, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\exports.py", line 1345, in say
+    who(what, *args, **kwargs)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 1142, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 842, in do_display
+    **display_args)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\character.py", line 591, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ui.py", line 297, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 2702, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\display\core.py", line 3380, in interact_core
@@ -42,9 +38,9 @@ Full traceback:
     rv = renpy.loader.load(fn)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\loader.py", line 576, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'musique/Beautiful Chinese Music - Chinese Zither and Bamboo Flute 2.mp3'.
+IOError: Couldn't find file 'audio/gong_grave_leger.mp3'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 L'épée du samouraï 1.0
-Sun Nov 15 14:18:33 2020
+Mon Nov 16 19:11:42 2020
