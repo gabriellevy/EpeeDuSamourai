@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/numeros1_40.rpy", line 193: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "avancer ouvertement vers eux et prétendre que vous avez un message important pour le seigneur Tsietsin"
-                                                                                                            ^
+File "game/numeros1_40.rpy", line 310: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "ou bien vous placer dos aux arbres et faire front à vos ennemis"
+                                                                     ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sat Nov 14 17:17:20 2020
+Mon Nov 16 18:48:06 2020

@@ -298,3 +298,77 @@ label numero34:
             jump numero44
         "ou attendre de pied ferme qu'il arrive à votre hauteur":
             jump numero56
+
+label numero35:
+    "Alors que trois des monstres verts s'élancent vers le tertre dans la ferme intention de vous sauter dessus, vous exécutez vous-même un bond prodigieux qui vous porte à la cime des arbres et vous permet d'atterrir derrière vos assaillants."
+    "Ces derniers font immédiatement volte-face et se ruent à nouveau sur vous."
+    "Cependant, vous avez remarqué un phénomène fort intéressant en survolant les monstres : leur tête plate est en réalité une espèce de cuvette remplie de liquide !"
+    "Vous comprenez maintenant la raison de leur étrange façon de marcher : ces créatures doivent absolument rester en équilibre afin de ne pas renverser leur liquide crânien !"
+    menu:
+        "Vous n'avez qu'une alternative : vous enfuir en courant":
+            jump numero173
+        "ou bien vous placer dos aux arbres et faire front à vos ennemis":
+            jump numero183
+
+label numero36:
+    "Le regard du Phénix se voile et la flamme qui animait ses yeux vacille avant de s'éteindre complètement."
+    "La fabuleuse créature s'abat comme une masse à vos pieds, vidée de toute vie. Soudain, elle s'embrase à nouveau !"
+    "Fort heureusement, c'est pour devenir la proie de ses propres flammes, et son corps se consume entièrement, ne formant bientôt plus qu'un petit tas de cendres sur le sol."
+    "C'est alors que se produit un phénomène incroyable : un autre Phénix, légèrement plus petit que le précédent, renaît des cendres encore fumantes."
+    "Il s'immobilise dans les airs en poussant un cri d'exultation, puis s'envole à tire-d'aile, disparaissant de votre vue à votre grand soulagement."
+    "Pendant un instant, vous restez tout ébahi de ce que vous venez de voir, puis, reprenant vos esprits, vous franchissez la porte pour retourner au Centre des Univers."
+    jump numero8_choix
+
+label numero37:
+    "Rassemblant toute l'autorité dont vous pouvez faire preuve dans ces pénibles circonstances, vous ordonnez aux paysans de vous tirer de ce piège."
+    "Les hommes s'avancent vers vous un par un, méfiants."
+    "Après avoir constaté que vous êtes effectivement dans une bien mauvaise posture, ils se mettent à grimacer des sourires peu rassurants et à discuter de votre sort."
+    "La solution qu'ils adoptent à la majorité ne manque pas de raffinement : ils vont vous sortir de là..."
+    "pour vous enfourner, vivant, dans une meule à charbon ! Sur ce, ils commencent à préparer des liens pour vous attacher."
+    "Mieux vaudrait les dissuader sans délai de commettre un tel acte !"
+    menu:
+        "Si vous désirez leur faire part de l'importance de votre mission":
+            jump numero89
+        "Si vous jugez préférable de leur dire que les esprits viendront à jamais les hanter, s'ils osent assassiner le Senseï du Shogun":
+            jump numero101
+
+label numero38:
+    "Il se produit soudain un craquement assourdissant comme un coup de tonnerre, et une onde de douleur vous foudroie le corps :"
+    "quelque chose vient de vous heurter le dos avec une violence inouïe qui vous jette au sol. Vous perdez 3 points d'ENDURANCE."
+    $ PerteEndurance(3)
+    "Si vous êtes encore en vie, vous constatez, en vous retournant péniblement, qu'une grande herse en fer rouillé vient de s'abattre derrière vous en vous écorchant le dos au passage."
+    "Comme il vous est désormais impossible de rebrousser chemin, vous vous remettez en route."
+    "Au bout de quelques mètres, une odeur nauséabonde vous frappe les narines, et, droit devant vous, vous apercevez une lueur laiteuse dont l'éclat augmente au fur et à mesure que vous approchez."
+    jump numero50
+
+label numero39:
+    "Les pointes acérées du trident ont atteint vos poumons. Vous vous efiondrez sur le sol en crachant du sang."
+    "Vous êtes tombé aux mains des Kappas, et il n'y a plus aucun espoir. Avant même que vous ne rendiez le dernier souffle, ils vous entraînent au plus profond des eaux glauques de la rivière."
+
+label numero40:
+    "Le geôlier parcourt le couloir en réveillant les autres prisonniers, glissant au passage des écuelles d'eau croupie et des tranches de pain noir sous les portes."
+    "Puis il revient sur ses pas et ouvre la porte de votre cellule. Cette fois, il est accompagné de trois soldats."
+    menu:
+        "Si vous voulez faire semblant d'être blessé, afin de les attaquer par surprise dès qu'ils seront près de vous":
+            jump numero370
+        "Si vous préférez dire que vous êtes blessé, mais attendre qu'ils vous aient sorti de votre cachot pour tenter de prendre une arme à l'extérieur et la fuite par la même occasion":
+            jump numero380
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# -------------------------------------------------------------
