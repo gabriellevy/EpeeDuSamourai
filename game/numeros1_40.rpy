@@ -284,6 +284,17 @@ label numero22:
         "affronter, seul, le Dai-Oni":
             jump numero292
 
+label numero23:
+    "Tout en vous protégeant la tête de votre wakizashi, vous reculez vivement tandis qu'une pluie de brandons enflammés s'abat autour de vous."
+    "L'un deux se coince dans une articulation de votre armure et un autre ébranle votre heaume. Vous êtes gravement brûlé et sévèrement commotionné (vous perdez 5 points d'ENDURANCE."
+    $ PerteEndurance(5)
+    "Si vous êtes toujours en vie, vous laissez libre cours à votre rage et, d'un coup net et précis, vous décapitez votre agresseur à l'aide de votre katana."
+    "Vous vous précipitez ensuite sur les autres assaillants, mais ceux-ci s'enfuient sans demander leur reste et se réfugient au fond des bois."
+    "Après avoir éteint les quelques flammes qui vous menaçaient encore, vous vous remettez en marche."
+    "Vous avez vaillamment défendu l'honneur du Shogun, ce qui vous permet d'ajouter 1 point à votre propre Honneur."
+    $ GainHonneur(1)
+    jump numero195
+
 # ------------------------------------------------------------------------------> plein de numéros pas faits :
 
 label numero34:
@@ -353,22 +364,3 @@ label numero40:
             jump numero370
         "Si vous préférez dire que vous êtes blessé, mais attendre qu'ils vous aient sorti de votre cachot pour tenter de prendre une arme à l'extérieur et la fuite par la même occasion":
             jump numero380
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# -------------------------------------------------------------

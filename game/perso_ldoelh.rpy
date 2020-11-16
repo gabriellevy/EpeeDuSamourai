@@ -71,6 +71,17 @@ init -1 python:
             endurance.m_Valeur = 0
             renpy.jump("mort")
 
+    def GainHonneur(num):
+        global honneur
+        honneur.m_Valeur = honneur.m_Valeur + num
+
+    def PerteHonneur(num):
+        global honneur
+        honneur.m_Valeur = honneur.m_Valeur - num
+        if honneur.m_Valeur <= 0:
+            honneur.m_Valeur = 0
+            renpy.jump("numero99")
+
     def TentezVotreChance():
         global chance, chanceux
         jet = random.randint(1, 6) + random.randint(1, 6)
