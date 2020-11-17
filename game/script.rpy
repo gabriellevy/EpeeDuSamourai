@@ -8,6 +8,8 @@ define s = Character('Shogun Kihei Hasekawa', who_outlines=[(2, "#894646",1,1)],
 define t = Character('Tatsu', color="#e30909")
 define d = Character('Dai-Oni', color="#2b1323")
 define i = Character('Ikiru', who_outlines=[(2, "#d6c9c1",1,1)], color="#220e01")
+define ie = Character('Ieratsu', color="#b4a4e4")
+define g = Character('Geolier', color="#b4a4e4")
 define narrator = Character(color="#fafad8", what_italic=True)
 
 # musiques
@@ -21,7 +23,7 @@ label start:
     play music musique_douce
     show screen profil_joueur
     # jump de test tmp ci après
-    jump numero27
+    jump numero28
     # sélection de la compétence de combat de base
     "En tant que Samouraï, vous êtes passé maître dans une des quatre disciplines décrites ci-après."
     "Au cours de l'aventure, il vous sera précisé, en temps voulu, d'utiliser la discipline dans laquelle vous excellez ou de prendre en considération les effets de cette discipline sur le déroulement d'un combat."

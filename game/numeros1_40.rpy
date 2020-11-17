@@ -341,6 +341,34 @@ label numero27:
     $ SetTesteChanceQuandBlessure("numero109")
     $ CommencerCombat("numero400")
 
+label numero28:
+    "Une exclamation retentit, suivie d'un grand éclat de rire : "
+    ie "-Oh ! Qu'est-ce que c'est que ça ? Un pied dans le foin !"
+    "En quelques secondes, on éparpille le chargement de la charrette et vous vous retrouvez nez à nez avec les lances des gardes qui vous encerclent."
+    show ieratsu at right
+    with moveinright
+    ie "-Ainsi, le Senseï du Shogun s'amuse à se cacher dans la paille comme un vulgaire palefrenier !"
+    ie "Je m'appelle Ieratsu et je suis le lieutenant du seigneur Tsietsin."
+    ie "Nous vous souhaitons la bienvenue en son château, poursuit-il avec une très nette ironie dans la voix."
+    "Puis il se tourne vers ses samouraïs et, sur un signe de lui, ces derniers se jettent sur vous."
+    "Vous vous débattez corps et âme, mais vous ne tardez pas à céder sous le nombre."
+    "On vous conduit ensuite dans le donjon du palais où l'on vous jette sans ménagement dans un sinistre cachot."
+    hide ieratsu
+    with moveoutright
+    scene bg prison
+    with dissolve
+    show geolier at right
+    with moveinright
+    "Le geôlier, un homme gras et rougeaud vêtu d'un uniforme crasseux, vous annonce d'un air goguenard :"
+    g "On te conduira demain devant le Shogun Tsietsin."
+    "Sur ces paroles, l'homme vous ferme brutalement la porte de la cellule au nez."
+    hide geolier
+    with moveoutright
+    "Vous voilà seul. On vous a désarmé, et c'est surtout cela, bien plus que le fait d'avoir été bafoué et indignement capturé, qui vous emplit de honte."
+    "La perte de vos armes vous coûte 1 point d'Honneur."
+    $ PerteHonneur(1)
+    "A présent, il ne vous reste plus qu'à vous allonger sur la maigre paillasse qui occupe le coin de votre cachot et à essayer de trouver tant bien que mal le sommeil en attendant le lendemain matin."
+    jump numero316
 
 # ------------------------------------------------------------------------------> plein de numéros pas faits :
 
