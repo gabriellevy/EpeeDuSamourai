@@ -51,12 +51,14 @@ init -1 python:
     def GainDeHabilete(num):
         global habilete
         habilete.m_Valeur = habilete.m_Valeur + num
+        CalculerHabilete()
 
     def PerteHabilete(num):
         global habilete
         habilete.m_Valeur = habilete.m_Valeur - num
         if habilete.m_Valeur < 0:
             habilete.m_Valeur = 0
+        CalculerHabilete()
 
     def GainEndurance(num):
         global endurance, maxEndurance
@@ -91,7 +93,7 @@ init -1 python:
             texte = "{} est inférieur ou égal à votre chance de {} : vous êtes chanceux !".format(jet, chance)
         else:
             chanceux = False
-            texte = "{} est inférieur ou égal à votre chance de {} : vous êtes chanceux !".format(jet, chance)
+            texte = "{} est supérieur à votre chance de {} : vous êtes malchanceux !".format(jet, chance)
         chance.m_Valeur = chance.m_Valeur - 1
         return texte
 

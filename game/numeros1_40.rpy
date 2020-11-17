@@ -323,6 +323,25 @@ label numero26:
     $ AjouterEnnemi("TATSU", 11, 13)
     $ CommencerCombat("numero42")
 
+label numero27:
+    "Au tréfonds de vous-même, vous puisez la force de résister aux perfides flatteries du démon d'Ikiru."
+    "Impuissant devant votre implacable détermination, celui-ci disparaît immédiatement de votre vue. Vous entendez alors Ikiru pousser un sifflement de rage et de dépit."
+    i "Ainsi, tu oses me résister, pauvre mortel !"
+    "Avant même que vous ne puissiez esquisser un geste pour vous emparer de Mort Joyeuse, Ikiru se lève de son trône et se rue sur vous."
+    "Il semble flotter au ras du sol et ses mains apparaissent telles de longues griffes de néant noir !"
+    "Vous vous mettez immédiatement en position de combat, mais Ikiru, sans même attendre de vous avoir rejoint, projette soudain ses bras en avant et en fait jaillir une fulgurante décharge ténébreuse."
+    "Le choc que vous recevez vous atteint aussi bien psychiquement que physiquement : vous perdez 2 points de CHANCE, 4 points d'ENDURANCE et 2 points d'HABlLETÉ."
+    $ PerteHabilete(2)
+    $ PerteEndurance(4)
+    $ PerteChance(2)
+    "Si vous êtes encore en vie à l'issue de cette terrible épreuve, c'est malheureusement pour constater qu'Ikiru tient maintenant à la main un long sabre d'acier noir où sont gravées des runes rougeoyantes."
+    "Il avance en brandissant son arme, la face toujours dissimulée dans l'ombre. Voici venu l'instant fatal :"
+    $ nouveauCombat(True)
+    $ AjouterEnnemi("IKIRU", 12, 12)
+    $ SetTesteChanceQuandBlessure("numero109")
+    $ CommencerCombat("numero400")
+
+
 # ------------------------------------------------------------------------------> plein de numéros pas faits :
 
 label numero34:

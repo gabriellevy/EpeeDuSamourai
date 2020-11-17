@@ -8,6 +8,10 @@ init -2 python:
     ennemis_ = list()
     jumpFinCombat_ = "???"
     valEnduranceRestanteEnnemi_ = 0 # valeur à partir de laquelle le combat est considéré termié (endurance restante)
+    testQuandBlesse_ = None
+    gotoLabelQuandBlesseEtMalchanceux_ = ""
+    tourGagneParJoueur_ = False # True si le joueur a belssé son ennemi
+    tourPerduParJoueur_ = False # True si l'ennemi a blessé le joueur
 
     def AjouterEnnemi(nom, habilete, endurance):
         nouvEnnemi = ennemi.Ennemi(nom, habilete, endurance)
@@ -41,6 +45,15 @@ init -2 python:
         valEnduranceRestanteEnnemi_ = val
         testFinCombat_ = TesterFinCombaDennemiEnduranceRestante
 
+    def SetTesteChanceQuandBlessure(gotoLabel):
+        """
+        Si cette fonction est appelée chaque fois que le joueur est blessé il doit tenter sa chance et si il est malchanceux il doit aller au gotoLabel
+        """
+        global testQuandBlesse_, gotoLabelQuandBlesseEtMalchanceux_
+        gotoLabelQuandBlesseEtMalchanceux_ = gotoLabel
+        testQuandBlesse_ = TesteChanceQuandBlessure
+
+
     # fonction à appeler pour tester si le combat est terminé ( par défaut oui si il n'y a plus d'ennemis)
     testFinCombat_ = TesterFinCombatPlusDennemis
 
@@ -49,6 +62,8 @@ init -2 python:
         unApresLautre_ = unApresLautre
         testFinCombat_ = TesterFinCombatPlusDennemis
         ennemis_.clear()
+        testQuandBlesse_ = None
+        gotoLabelQuandBlesseEtMalchanceux_ = ""
 
     def TesterFinCombat():
         global jumpFinCombat_, testFinCombat_
@@ -57,11 +72,23 @@ init -2 python:
         else:
             renpy.jump("debutTourDeCombat")
 
+    def TesteChanceQuandBlessure():
+        renpy.jump("TesteChanceQuandBlessure")
+
+    def MalChanceuxQuandBlessure():
+        renpy.jump(gotoLabelQuandBlesseEtMalchanceux_)
+
     def LancerDe():
         return random.randint(1, 6)
 
+    def TesterQuandBlesse():
+        if testQuandBlesse_ is not None:
+            testQuandBlesse_()
+
     def TourDeCombat():
-        global endurance, habilete, ennemis_
+        global endurance, habilete, ennemis_, tourGagneParJoueur_, tourPerduParJoueur_
+        tourGagneParJoueur_ = False
+        tourPerduParJoueur_ = False
 
         resDeJoueur = LancerDe() + LancerDe()
         resJoueur = habilete.m_Valeur + resDeJoueur
@@ -74,6 +101,7 @@ init -2 python:
         texte = texte + "\n -> "
         if resJoueur > resEnnemi:
             ennemi.m_Endurance = ennemi.m_Endurance - degats
+            tourGagneParJoueur_ = True
             if ennemi.m_Endurance <= 0:
                 # ennemi éliminé
                 texte = texte + "{} est tué.".format(ennemi.m_Nom)
@@ -83,6 +111,7 @@ init -2 python:
         elif resJoueur < resEnnemi:
             PerteEndurance(degats)
             texte = texte + "Vous êtes blessé et perdez {} d'endurance.".format(degats)
+            tourPerduParJoueur_ = True
         else:
             texte = texte + "Égalité."
         return texte
@@ -101,4 +130,18 @@ label debutTourDeCombat:
 label resolutionTourDeCombat:
     $ texteTourCombat = TourDeCombat()
     "[texteTourCombat]"
+    if tourPerduParJoueur_:
+        $ TesterQuandBlesse()
+
+label testerFinCombat:
     $ TesterFinCombat()
+
+label TesteChanceQuandBlessure:
+    menu:
+        "De plus l'effet de la blessure vous oblige à tester votre chance."
+        "Lancer deux dés":
+            $ texteResultatChance = TentezVotreChance()
+    "[texteResultatChance]"
+    if not chanceux:
+        $ MalChanceuxQuandBlessure()
+    jump testerFinCombat
