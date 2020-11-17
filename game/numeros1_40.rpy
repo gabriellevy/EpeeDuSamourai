@@ -370,6 +370,37 @@ label numero28:
     "A présent, il ne vous reste plus qu'à vous allonger sur la maigre paillasse qui occupe le coin de votre cachot et à essayer de trouver tant bien que mal le sommeil en attendant le lendemain matin."
     jump numero316
 
+label numero29:
+    "La route qui mène vers l'est en serpentant à travers les plaines du fleuve Hang-Yo fourmille d'activités."
+    "Dans cette vallée fertile où patrouillent sans relâche les soldats du Shogun, nombreux sont ceux qui ignorent tout du trouble qui règne aux frontières du Tochimin."
+    "Les chariots de riz, les roulottes des colporteurs et les voitures des camelots qui s'acheminent lentement sur la route ne sont pas différents de ceux qui empruntaient jadis la piste du Vent d'Est, il y a maintenant plus de deux cents ans."
+    "Les conducteurs des véhicules, étant d'une caste bien inférieure à la vôtre, prennent grand soin de ne pas éclabousser votre armure rutilante, et tous s'inclinent avec respect sur votre passage."
+    "Le voyage vers les hauts plateaux se poursuit tranquillement, mais alors que vous atteignez la dernière courbe du fleuve qui ondule comme un grand serpent de mercure miroitant sous les rayons du soleil couchant, vous constatez, dans le paysage comme dans la mentalité des habitants, un très net changement."
+    jump numero43
+
+label numero30:
+    "Vous ouvrez la porte marquée « Pinacle des Hauteurs Suprêmes » et, comme par enchantement, vous vous retrouvez au sommet d'un piton rocheux perdu dans un ciel baigné d'une étrange lumière orangée."
+    "Des milliers d'autres cimes se dressent à perte de vue, tout autour de vous, mais vous êtes sur la plus haute de toutes."
+    "Derrière vous se trouve une porte flottant entre terre et ciel : la porte conduisant au Centre des Univers."
+    "Soudain, une silhouette se profile à l'horizon et grandit à vue d'oeil en se rapprochant."
+    "Vous constatez qu'il s'agit d'un Tatsu, un dragon volant, bien que démuni d'ailes."
+    "Son corps ressemble à celui d'un gigantesque serpent, mais il est pourvu de quatre pattes aux griffes acérées et semble marcher sur l'air."
+    menu:
+        "Si vous avez déjà eu l'occasion de rencontrer un Tatsu dans la forêt des Ombres":
+            jump numero144
+        "Si vous n'avez jamais vu de Tatsu auparavant":
+            jump numero156
+
+label numero31:
+    "A chaque fois que votre sabre frappe l'un des monstres, vous voyez la peau verte et squameuse prendre une couleur violacée."
+    "Au fur et à mesure de vos coups, vos adversaires prennent ainsi l'aspect de gros fruits blets mais, curieusement, ces blessures ne semblent pas les affecter outre mesure."
+    "Par ailleurs, d'autres créatures vertes émergent peu à peu des eaux pour venir se joindre à celles que vous combattez déjà."
+    "Dans peu de temps, vous serez complètement débordé, et il est évident que vous n'arriverez pas à vaincre cette horde par la seule pratique des armes."
+    jump numero41
+
+label numero32:
+
+
 # ------------------------------------------------------------------------------> plein de numéros pas faits :
 
 label numero34:
