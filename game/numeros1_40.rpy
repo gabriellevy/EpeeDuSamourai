@@ -399,9 +399,21 @@ label numero31:
     jump numero41
 
 label numero32:
+    "Le guerrier mort vivant se bat dans un silence total et surnaturel."
+    "Le dernier coup que vous venez de lui porter lui arrache un bras, mais, d'un bond prodigieux, il se met hors de votre portée."
+    "Soudain, votre ennemi devient pratiquement invisible ; seul un léger contour rougeâtre vous permet de discerner sa position."
+    "Puis il passe de nouveau à l'attaque, et vous devez poursuivre le combat."
+    "Il vous est désormais impossible d'utiliser le Iaijutsu, même si vous maîtrisez cette discipline, et vous devez de plus déduire 2 points de votre HABILETÉ tant que votre adversaire demeure quasi invisible."
+    $ SetMalusHabilete(2)
+    $ SetGoToQuandEnnemiBlesse("numero58")
+    $ DesactiveIaijutsu()
+    $ ContinuerCombat("numero400")
 
-
-# ------------------------------------------------------------------------------> plein de numéros pas faits :
+label numero33:
+    "Alors que vous approchez de l'estuaire en pataugeant dans la fange du marais, la pluie commence à tomber."
+    "Vous continuez à progresser tant bien que mal, mais l'averse devient diluvienne et vous êtes bientôt trempé jusqu'aux os et couvert de boue de la tête aux pieds."
+    "Ce déluge continue nuit et jour, sans aucun répit, et, au bout de quarante-huit heures, vous décidez finalement de rebrousser chemin."
+    "Le niveau des eaux a tellement monté qu'il vous faut nager pour avancer. Vos forces vous abandonnent bientôt, et vous finissez par couler, à bout de souffle."
 
 label numero34:
     "Vous avancez d'un pas résolu sur la piste poussiéreuse, mais vous accélérez l'allure en entendant des hurlements de terreur en provenance du village."

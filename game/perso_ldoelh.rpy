@@ -5,9 +5,6 @@ init -1 python:
     import random
     from despin.abs import carac
 
-    habilete = carac.Carac("Habileté de base", random.randint(7, 12))
-    habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
-    aUnKatana = True
     endurance = carac.Carac("Endurance", 12 + random.randint(1, 6) + random.randint(1, 6))
     maxEndurance = endurance.m_Valeur
     maxRepas = 10
@@ -35,6 +32,12 @@ init -1 python:
     chance = carac.Carac("Chance", 6 + random.randint(1, 6))
     maxChance = chance.m_Valeur
     chanceux = True # true si le dernier lancer a donné comme résultat "chanceux"
+
+    # habileté :
+    habilete = carac.Carac("Habileté de base", random.randint(7, 12))
+    habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
+    aUnKatana = True
+    habile_ = True # true si le dernier lancer baé sur l'habileté a donné une réussite
 
     def GainDeChance(num):
         global chance, maxChance
@@ -88,13 +91,25 @@ init -1 python:
         global chance, chanceux
         jet = random.randint(1, 6) + random.randint(1, 6)
         texte = "rien encore"
-        if jet <= chance:
+        if jet <= chance.m_Valeur:
             chanceux = True
             texte = "{} est inférieur ou égal à votre chance de {} : vous êtes chanceux !".format(jet, chance)
         else:
             chanceux = False
             texte = "{} est supérieur à votre chance de {} : vous êtes malchanceux !".format(jet, chance)
         chance.m_Valeur = chance.m_Valeur - 1
+        return texte
+
+    def TentezVotreHabilete():
+        global habilete, habile_
+        jet = random.randint(1, 6) + random.randint(1, 6)
+        texte = "rien encore"
+        if jet < habilete.m_Valeur:
+            habile_ = True
+            texte = "{} est inférieur à votre habileté de {}. Réussite !".format(jet, habilete.m_Valeur)
+        else:
+            habile_ = False
+            texte = "{} est supérieur ou égal à votre habileté de {} : échec !".format(jet, habilete.m_Valeur)
         return texte
 
 

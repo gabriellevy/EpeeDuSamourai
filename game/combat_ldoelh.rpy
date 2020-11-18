@@ -12,6 +12,8 @@ init -2 python:
     gotoLabelQuandBlesseEtMalchanceux_ = ""
     tourGagneParJoueur_ = False # True si le joueur a belssé son ennemi
     tourPerduParJoueur_ = False # True si l'ennemi a blessé le joueur
+    malusHabilete_ = 0
+    gotoLabelQuandEnnemiBlesse_ = ""
 
     def AjouterEnnemi(nom, habilete, endurance):
         nouvEnnemi = ennemi.Ennemi(nom, habilete, endurance)
@@ -28,6 +30,10 @@ init -2 python:
             texte = texte + str(enn)
             texte += "\n"
         return texte
+
+    def SetGoToQuandEnnemiBlesse(gotoLabel):
+        global gotoLabelQuandEnnemiBlesse_
+        gotoLabelQuandEnnemiBlesse_ = gotoLabel
 
     def TesterFinCombatPlusDennemis():
         global ennemis_
@@ -53,17 +59,22 @@ init -2 python:
         gotoLabelQuandBlesseEtMalchanceux_ = gotoLabel
         testQuandBlesse_ = TesteChanceQuandBlessure
 
+    def SetMalusHabilete(num):
+        global malusHabilete_
+        malusHabilete_ = num
 
     # fonction à appeler pour tester si le combat est terminé ( par défaut oui si il n'y a plus d'ennemis)
     testFinCombat_ = TesterFinCombatPlusDennemis
 
     def nouveauCombat(unApresLautre):
-        global unApresLautre_, testFinCombat_
+        global unApresLautre_, testFinCombat_, malusHabilete_, gotoLabelQuandEnnemiBlesse_, testQuandBlesse_, gotoLabelQuandBlesseEtMalchanceux_, malusHabilete_
         unApresLautre_ = unApresLautre
         testFinCombat_ = TesterFinCombatPlusDennemis
         ennemis_.clear()
         testQuandBlesse_ = None
         gotoLabelQuandBlesseEtMalchanceux_ = ""
+        gotoLabelQuandEnnemiBlesse_ = ""
+        malusHabilete_ = 0
 
     def TesterFinCombat():
         global jumpFinCombat_, testFinCombat_
@@ -85,14 +96,26 @@ init -2 python:
         if testQuandBlesse_ is not None:
             testQuandBlesse_()
 
+    def ActionsQuandEnnemiBlesse():
+        global gotoLabelQuandEnnemiBlesse_
+        if gotoLabelQuandEnnemiBlesse_ != "":
+            renpy.jump(gotoLabelQuandEnnemiBlesse_)
+
+    def BlesseEnnemi(degats):
+        ennemi = ennemis_[0]
+        ennemi.m_Endurance = ennemi.m_Endurance - degats
+
     def TourDeCombat():
         global endurance, habilete, ennemis_, tourGagneParJoueur_, tourPerduParJoueur_
         tourGagneParJoueur_ = False
         tourPerduParJoueur_ = False
 
         resDeJoueur = LancerDe() + LancerDe()
-        resJoueur = habilete.m_Valeur + resDeJoueur
-        texte = "Vous obtenez {} que vous ajoutez à votre habileté ce qui donne {}.".format(resDeJoueur, resJoueur)
+        resJoueur = habilete.m_Valeur + resDeJoueur - malusHabilete_
+        texte = "Vous obtenez {} que vous ajoutez à votre habileté ".format(resDeJoueur)
+        if malusHabilete_ > 0:
+            texte = texte + "moins le malus de {} ".format(malusHabilete_)
+        texte = texte + "ce qui donne {}.".format(resJoueur)
         ennemi = ennemis_[0]
         resDeEnnemi = LancerDe() + LancerDe()
         resEnnemi = ennemi.m_Habilete + resDeEnnemi
@@ -100,7 +123,7 @@ init -2 python:
         degats = 2
         texte = texte + "\n -> "
         if resJoueur > resEnnemi:
-            ennemi.m_Endurance = ennemi.m_Endurance - degats
+            BlesseEnnemi(degats)
             tourGagneParJoueur_ = True
             if ennemi.m_Endurance <= 0:
                 # ennemi éliminé
@@ -116,9 +139,12 @@ init -2 python:
             texte = texte + "Égalité."
         return texte
 
+# fin python
 
 label debutCombat:
-    "Le combat commence !"
+    if discipline == disciplineIaijutsu:
+        "Grâce à votre maîtrise du Iaijutsu vous infligez 3 dégâts en dégainant votre sabre d'un unique mouvement fulgurant et maîtrisé."
+        $ BlesseEnnemi(3)
 
 label debutTourDeCombat:
     $ texteEnnemis = AffichageEnnemis()
@@ -132,6 +158,8 @@ label resolutionTourDeCombat:
     "[texteTourCombat]"
     if tourPerduParJoueur_:
         $ TesterQuandBlesse()
+    if tourGagneParJoueur_:
+        $ ActionsQuandEnnemiBlesse()
 
 label testerFinCombat:
     $ TesterFinCombat()
