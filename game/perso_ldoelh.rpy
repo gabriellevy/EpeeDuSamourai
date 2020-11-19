@@ -19,7 +19,7 @@ init -1 python:
     flechesPerforantes = carac.Carac("Flèches perforantes", 0)
     flechesHurleuses = carac.Carac("Flèches hurleuses", 0)
 
-    disciplineKyujutsu = "Kyujutsu"
+    disciplineKyujutsu = "Kyujutsu" # tir à l'arc
     disciplineIaijutsu = "Iaijutsu"
     disciplineKarumijutsu = "Karumijutsu"
     disciplineNitoKenjutsu = "Ni-to-Kenjutsu"
@@ -38,6 +38,9 @@ init -1 python:
     habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
     aUnKatana = True
     habile_ = True # true si le dernier lancer baé sur l'habileté a donné une réussite
+
+    def PeutTirerALArc():
+        return disciplineKyujutsu == discipline.m_Valeur and ADesFleches()
 
     def ADesFleches():
         return flechesSaule.m_Valeur > 0 or flechesHarpon.m_Valeur > 0 or flechesPerforantes.m_Valeur > 0 or flechesHurleuses.m_Valeur > 0

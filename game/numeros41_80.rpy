@@ -144,6 +144,109 @@ label numero50_tir_arc:
     $ AjouterEnnemi("MUKADE", 7, enduranceMukade)
     $ CommencerCombat("numero62")
 
+label numero51:
+    "Vous observez attentivement Ikiru. Celui-ci appelle d'autres créatures diaboliques à la rescousse puis, sur un signe, il les lance à l'attaque."
+    "Chacune d'elles est une masse informe et ténébreuse qui tentera de vous étouffer."
+    "Vous allez devoir affronter, l'une après l'autre, dix de ces abominables entités."
+    "Cependant, chaque fois que vous en frapperez une avec succès, Mort Joyeuse l'irradiera de son éclat magique et la détruira immédiatement."
+    $ nouveauCombat(True)
+    $ AjouterEnnemi("Première Ombre", 9, 1)
+    $ AjouterEnnemi("Deuxième Ombre", 9, 1)
+    $ AjouterEnnemi("Troisième Ombre", 9, 1)
+    $ AjouterEnnemi("Quatrième Ombre", 9, 1)
+    $ AjouterEnnemi("Cinquième Ombre", 9, 1)
+    $ AjouterEnnemi("Sixième Ombre", 9, 1)
+    $ AjouterEnnemi("Septième Ombre", 9, 1)
+    $ AjouterEnnemi("Huitième Ombre", 9, 1)
+    $ AjouterEnnemi("Neuvième Ombre", 9, 1)
+    $ AjouterEnnemi("Dixième Ombre", 9, 1)
+    $ CommencerCombat("numero121")
+
+label numero52:
+    "En entendant votre réponse, le Tatsu se raidit de sur-prise, puis il laisse exploser sa fureur :"
+    t "-Une énigme, oui ! Maudit sois-tu, mortel !"
+    "Pendant un instant, vous croyez qu'il va vous attaquer, mais il parvient à surmonter son courroux et reprend d'un ton plus calme :"
+    t "-Tu as passé l'épreuve avec succès et tu es libre, maintenant, de t'en aller."
+    t "Cependant, avant de partir, écoute bien ce que je vais te dire."
+    t "Si tu participes un jour au Tournoi de l'Espace, et s'il advenait, par extraordinaire, que tu l'emportes sur le Dai-Oni, invoque le Jizo des Démons en prononçant cette incantation :"
+    t "« Un Shura est là, O Jizo ! Viens pour exécuter ton dessein »."
+    "Vous laissant sur ces paroles laconiques, le Tatsu reprend les airs et disparaît."
+    hide tatsu
+    with moveouttop
+    "À sa place, vous trouvez un talisman en jade représentant un dragon."
+    "Vous vous baissez pour le ramasser, puis vous l'examinez attentivement : c'est un Talisman de Circonstances Fortuites qui vous permet d'ajouter 2 points à votre total de CHANCE."
+    $ GainChance(2)
+    "Satisfait de votre trouvaille, vous reprenez votre marche à travers les bois"
+    jump numero82
+
+label numero53:
+    "Tournant le dos aux eaux écumeuses, vous levez votre sabre, mais, ce faisant, vous perdez l'équilibre et vous glissez sur le limon."
+    "Votre lame frôle de peu la tête du monstre et celui-ci vous plante ses crocs dans le bras."
+    "Vous perdez 4 points d'ENDURANCE."
+    $ PerteEndurance(4)
+    "La créature écailleuse se jette sur vous et, d'un violent coup de patte, vous précipite dans l'eau comme si vous n'étiez qu'une vulgaire poupée de son."
+    "Malheureusement pour vous, des pieux acérés affleurent à la surface !"
+    "Vous vous empalez dessus et vous perdez de nouveau 4 points d'ENDURANCE."
+    $ PerteEndurance(4)
+    "Vous vous extirpez tant bien que mal de ces pieux et, porté par le courant, vous gagnez péniblement la rive opposée, le corps meurtri et le moral à zéro."
+    jump numero395
+
+label numero54:
+    "Vous avez vaincu le Dai-Oni ! Ce dernier gît à vos pieds et sa vie ne tient plus qu'à un fil."
+    "Peu à peu, les ombres fantomatiques quittent l'Arène."
+    "Quand vous restez seul à seul avec votre adversaire, vous l'entendez murmurer avec peine :"
+    d "— Tu as gagné, mortel, et je suis tenu, par les lois célestes qui régissent le Tournoi de l'Espace, de t'accorder une seule et unique question."
+    menu:
+        "Qu'allez-vous demander au Dai-Oni :"
+        "Quel est le secret de Mort Joyeuse ?":
+            jump numero206
+        "Comment vaincre Ikiru, Maître des Ténèbres ?":
+            jump numero188
+        "Pouvez-vous m'aider à accomplir ma mission et anéantir Ikiru ?":
+            jump numero150
+
+label numero55:
+    "Le magicien se dresse encore sur votre chemin et vous dit, le visage rayonnant de joie :"
+    m "-Vous avez fait le bon choix, jeune samouraï, et vous serez bientôt au bout de vos peines."
+    "En vous voyant avancer vers la gueule béante et les ailerons aciculaires du Dragon des Mers, la prêtresse se met à trembler d'effroi et le magicien, quant à lui, disparaît de nouveau."
+    "Le monstre rejette la tête en arrière et crache un torrent d'eau bouillante sur la prêtresse et vous."
+    "La brûlure est intolérable et, avant que vous ne perdiez conscience, vous entendez la jeune femme hurler de terreur à l'approche du monstre qui va tous deux vous dévorer."
+
+label numero56:
+    "Le cavalier samouraï sursaute en vous apercevant, puis il s'écrie :"
+    "-Mais voilà cette chiffe molle, le laquais du soi-disant Shogun Kihei Hasekawa ! Longue vie au nouveau Shogun, Tsietsin-Sama !"
+    "Sur ce, il passe à l'attaque et vous charge en brandissant sa lance."
+    "Ainsi donc, le seigneur Tsietsin a rejoint le camp des traîtres..."
+    if PeutTirerALArc():
+        menu:
+            "Si vous voulez décocher une flèche à cet insultant personnage":
+                jump numero80
+            "Sinon, il va falloir subir l'assaut.":
+                jump numero92
+    jump numero92
+
+label numero57:
+    "Les têtes désincarnées commencent à s'entrechoquer en hurlant et en proférant d'ignobles malédictions, puis elles se jettent sur vous et vous frappent à grands coups de crânes."
+    "Vous résistez pendant un moment à cette terrifiante attaque, mais vous finissez par être à moitié assommé et totalement incapable de vous défendre plus longtemps."
+    "Alors que vous vous affalez mollement sur le sol, les Rokuro-Kubi commencent à vous arracher des lambeaux de chair, sans même attendre votre mort."
+    "Quel festin, ce soir, pour eux !"
+
+label numero58:
+    "Le mort vivant fait un nouveau bond qui le porte, cette fois, de l'autre côté du pont."
+    "Là, il pousse un hululement à vous glacer le sang, puis il redevient visible."
+    "C'est alors que se produit une chose plus épouvantable encore : les cadavres squelettiques qui flottaient au fil de la rivière sanglante se dressent hors de l'eau et commencent à s'animer."
+    "Six d'entre eux envahissent le pont."
+    if PeutTirerALArc():
+        menu:
+            "Si vous voulez tenter de tirer sur le samouraï mort vivant":
+                jump numero134
+            "Sinon.":
+                jump numero242
+    jump numero242
+
+
+
+
 
 
 
