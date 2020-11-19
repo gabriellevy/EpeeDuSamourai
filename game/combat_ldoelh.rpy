@@ -92,6 +92,9 @@ init -2 python:
     def LancerDe():
         return random.randint(1, 6)
 
+    def LancerDeuxDes():
+        return LancerDe() + LancerDe()
+
     def TesterQuandBlesse():
         if testQuandBlesse_ is not None:
             testQuandBlesse_()

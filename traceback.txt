@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/numeros41_80.rpy", line 65, in script
-    jump numero236
-ScriptError: could not find label 'numero236'.
+  File "game/combat_ldoelh.rpy", line 168, in script
+    $ TesterFinCombat()
+ScriptError: could not find label 'numero62'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/numeros41_80.rpy", line 65, in script
-    jump numero236
-  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
-    rv = renpy.game.script.lookup(target)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\bootstrap.py", line 316, in bootstrap
+    renpy.main.main()
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 578, in main
+    run(restart)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\main.py", line 143, in run
+    renpy.execution.run_context(True)
+  File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\execution.py", line 908, in run_context
+    context.run()
+  File "game/combat_ldoelh.rpy", line 168, in script
+    $ TesterFinCombat()
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'numero236'.
+ScriptError: could not find label 'numero62'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 L'épée du samouraï 1.0
-Wed Nov 18 21:56:31 2020
+Thu Nov 19 19:10:46 2020

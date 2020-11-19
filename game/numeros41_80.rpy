@@ -65,3 +65,104 @@ label numero46:
         jump numero236
     else:
         jump numero248
+
+label numero47:
+    "Le Tatsu semble fort déconcerté."
+    t "-Un oeuf. Oui, c'est exact, mortel, vous dit-il d'une voix contrariée."
+    "Puis son regard s'anime à nouveau d'une lueur vorace : Mais seras-tu assez malin pour trouver la bonne réponse deux fois de suite ? Ecoute donc la seconde énigme :"
+    t "Quand on ne sait pas ce que c'est, \nC'est quelque chose ; Mais quand\non sait ce que c'est, Alors ce n'est\n plus rien."
+    $ reponseTatsu = renpy.input("Votre réponse ?")
+    if reponseTatsu == "énigme" or reponseTatsu == "Énigme" or reponseTatsu == "Enigme":
+        jump numero52
+    else:
+        jump numero26
+
+label numero48:
+    "L'étrange femme vous regarde d'un air narquois."
+    menu:
+        "Quel objet allez-vous choisir pour tenter de la gagner à votre cause ?"
+        "Un cor ?":
+            jump numero86
+        "Une fiole d'eau provenant de la source du Grand Savoir ?":
+            jump numero96
+        "Un Casque de Confusion ?":
+            jump numero114
+        "Si vous ne possédez aucun de ces objets":
+            jump numero130
+
+label numero49:
+    "Vous vous jetez dans la blancheur écumeuse de la rivière pour apercevoir — hélas ! un peu tard — que les monstres ont eu la malignité de disposer des pieux acérés, juste sous la surface des eaux."
+    "Vous vous empalez dessus et vous perdez 7 points d'ENDURANCE."
+    $ PerteEndurance(7)
+    "Si vous êtes toujours en vie, vous réussissez à vous extirper péniblement des pieux et vous gagnez la rive opposée, le corps transpercé en de multiples endroits."
+    jump numero395
+
+label numero50:
+    show screen fleches
+    "La puanteur devient de plus en plus forte."
+    "Vous débouchez finalement dans une grande caverne baignée d'une lumière blafarde, sans que vous puissiez toutefois en déceler l'origine."
+    "Le sol est jonché d'ossements, de vêtements en lambeaux et d'armes rongées par la rouille."
+    "Soudain, vous repérez d'où vient la lumière : une silhouette phosphorescente avance sur vous !"
+    "Vous apercevez tout d'abord une gueule béante, bordée de dents tranchantes qui s'entrechoquent nerveusement."
+    "D'énormes yeux, tels deux disques noirs inscrutables, vous fixent méchamment."
+    "Le corps de la créature, quant à lui, est formé de segments osseux portés par de multiples pattes qui s'agitent frénétiquement."
+    "La peau du monstre est d'une blancheur laiteuse et malsaine : c'est elle qui diffuse la lumière qui vous avait tant intrigué."
+    "Vous êtes en présence d'un Mukade, une espèce de mille-pattes géant de plusieurs mètres de long."
+    "Il avance inexorablement vers vous, et il est évident que vous représentez pour lui un mets de choix !"
+
+    $ enduranceMukade = 20
+    $ tirsArcPossibles = 2
+label numero50_tir_arc:
+    if disciplineKyujutsu == discipline.m_Valeur and tirsArcPossibles > 0 and ADesFleches():
+        $ degatsFleche = 2
+        menu:
+            "Décocher une flèche de saule au monstre" if flechesSaule.m_Valeur > 0:
+                $ flechesSaule.m_Valeur = flechesSaule.m_Valeur - 1
+                $ degatsFleche = 2
+            "Décocher une flèche-harpon au monstre" if flechesHarpon.m_Valeur > 0:
+                $ flechesHarpon.m_Valeur = flechesHarpon.m_Valeur - 1
+                $ degatsFleche = 3
+            "Décocher une flèche perforante au monstre" if flechesPerforantes.m_Valeur > 0:
+                $ flechesPerforantes.m_Valeur = flechesPerforantes.m_Valeur - 1
+                $ degatsFleche = 2
+            "Décocher une flèche hurleuse au monstre" if flechesHurleuses.m_Valeur > 0:
+                $ flechesHurleuses.m_Valeur = flechesHurleuses.m_Valeur - 1
+                $ degatsFleche = 1
+
+        $ tirArc1 = LancerDeuxDes()
+        "Vous obtenez [tirArc1]."
+        if tirArc1 < habilete.m_Valeur:
+            "C'est inférieur à votre habileté de [habilete.m_Valeur]. La créature est blessée."
+            $ enduranceMukade = enduranceMukade - degatsFleche
+        else:
+            "C'est supérieur à votre habileté de [habilete.m_Valeur].Vous l'avez ratée."
+
+        $ tirsArcPossibles = tirsArcPossibles - 1
+        jump numero50_tir_arc
+
+    $ nouveauCombat(True)
+    $ AjouterEnnemi("MUKADE", 7, enduranceMukade)
+    $ CommencerCombat("numero62")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# --------------youpi

@@ -39,6 +39,9 @@ init -1 python:
     aUnKatana = True
     habile_ = True # true si le dernier lancer baé sur l'habileté a donné une réussite
 
+    def ADesFleches():
+        return flechesSaule.m_Valeur > 0 or flechesHarpon.m_Valeur > 0 or flechesPerforantes.m_Valeur > 0 or flechesHurleuses.m_Valeur > 0
+
     def GainDeChance(num):
         global chance, maxChance
         chance.m_Valeur = chance.m_Valeur + num
@@ -140,6 +143,7 @@ init -1 python:
 
     def DisciplineAleatoire():
         global disciplineKyujutsu, disciplineIaijutsu, disciplineKarumijutsu, disciplineNitoKenjutsu
+        return Kyujutsu() # tmp test
         val = random.randint(1, 4)
         if val == 1:
             return Kyujutsu()
