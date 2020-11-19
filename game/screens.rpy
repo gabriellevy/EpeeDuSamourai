@@ -27,7 +27,7 @@ style gui_text:
 
 style button:
     properties gui.button_properties("button")
-    activate_sound "audio/son_choix.mp3"
+    activate_sound "audio/selection.wav"
 
 style button_text is gui_text:
     properties gui.text_properties("button")

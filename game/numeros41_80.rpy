@@ -244,6 +244,137 @@ label numero58:
                 jump numero242
     jump numero242
 
+label numero59:
+    "Les charbonniers sont au nombre de dix."
+    "Ils sont regroupés au centre de plusieurs tertres fumants, recouverts de tourbe fraîchement extraite."
+    "Des volutes de fumée grise et dense s'échappent des monticules : c'est sous ces meules qu'on brûle du bois à très haute température, afin de le transformer en charbon."
+    "A côté, il y a de grands tas de bûches prêtes à subir le même traitement."
+    menu:
+        "A présent, qu'allez-vous faire :"
+        "ordonner à tous les hommes présents dans la charbonnière de s'agenouiller devant vous en signe de soumission":
+            jump numero111
+        "ou bien décocher une flèche au jeune malotru qui vous a insulté"if PeutTirerALArc():
+            jump numero123
+        "tirer vos sabres":
+            jump numero135
+        "ou encore vous élancer d'un bond par-dessus le petit groupe" if disciplineKarumijutsu == discipline.m_Valeur:
+            jump numero147
+
+label numero60:
+    "Le sabre au poing, vous avancez en criant :"
+    "— Vous feriez mieux de m'aider, sinon gare aux conséquences !"
+    "L'étrange femme vous observe, le visage blême et déformé par la peur, mais elle tend soudain un bras en avant et fait jaillir un éclair bleu de ses doigts fuselés."
+    "La décharge d'énergie explose à vos pieds, libérant une flamme bleutée qui vous brûle au second degré."
+    "Vous perdez 2 points d'ENDURANCE."
+    $ PerteEndurance(2)
+    "Une fois remis de ce choc, vous constatez que la femme a disparu."
+    menu:
+        "Si vous voulez vous lancer à sa recherche":
+            jump numero70
+        "Si vous préférez ne pas insister, franchissez la porte qui vous ramènera au Centre des Univers.":
+            jump numero8_choix
+
+label numero61:
+    "Alors que vous êtes à mi-chemin, vos pieds dérapent soudain sur le limon vaseux qui recouvre la jetée et, perdant l'équilibre, vous tombez à la renverse dans les eaux écumeuses qui rugissent en aval."
+    "Malheureusement pour vous, les Kappas — puisque c'est ainsi qu'on nomme ces abominables créatures ont justement tendu là un piège d'une rare cruauté :"
+    "plusieurs rangées de pieux acérés qui affleurent à la surface. Vous vous empalez dessus et, privé de la protection de votre armure, vous n'avez plus aucune chance de vous en sortir vivant."
+
+label numero62:
+    "D'un geste net, vous plongez votre sabre dans l'oeil droit du monstre."
+    "Celui-ci se rejette en arrière en émettant un affreux gargouillement, puis il se met à battre frénétiquement l'air de ses pattes, dans les affres de l'agonie."
+    "Vous reculez pour l'éviter, mais il s'apaise soudain et s'écroule, raide mort, sur le sol."
+    "En inspectant rapidement la caverne, vous apercevez une issue dans le fond et, dans un coin, le « Trésor » du monstre : un amas de vêtements en loques, d'ossements et d'armes rongées par la rouille."
+    "En y regardant de plus près, toutefois, vous découvrez qu'il y a également 15 Pièces d'Or, un casque en argent finement ciselé, une fiole contenant un liquide vert foncé, ainsi qu'un magnifique éventail de guerre en fer forgé qu'on utilisait jadis pour envoyer des messages codés aux troupes."
+    "Cet étrange objet est incrusté, sur la tranche, d'un motif en ivoire dont la seule vue vous donne la nausée,"
+    menu:
+        "Que voulez-vous faire à présent :"
+        "Ramasser l'éventail de guerre et l'ouvrir ?":
+            jump numero182
+        "Prendre une gorgée du liquide vert contenu dans la fiole ?":
+            jump numero196
+        "Mettre le casque d'argent ?":
+            jump numero210
+        "Laisser tout cela et sortir de la caverne sans plus tarder ?":
+            jump numero222
+
+label numero63:
+    "D'un geste vif, vous lancez l'Epée vers le trône."
+    "La lame magique vole comme une flèche vers sa cible."
+    "Dès qu'elle franchit le cercle des ombres qui entourent le trône, elle explose en une immense gerbe de lumière qui les consume toutes entièrement."
+    "Puis Mort Joyeuse continue sa trajectoire et, dans le rayonnement intense, vous voyez Ikiru se recroqueviller craintivement au fond de son siège."
+    "Pourtant, au dernier moment, il fait preuve d'un réflexe inattendu et se jette sur le côté."
+    "La lame se plante profondément dans le trône, où elle reste en vibrant."
+    "La voici hors de votre portée, et le pouvoir qu'elle vous conférait s'est évanoui ;"
+    "vous perdez 4 points d'ENDURANCE , 2 points d'HABILETÉ et 2 points de CHANCE."
+    $ PerteEndurance(4)
+    $ PerteHabilete(2)
+    $ PerteChance(2)
+    "Ikiru se redresse alors fièrement et vous dit:"
+    "-Pauvre imbécile !"
+    "Sa voix sonne comme un bruissement de feuilles mortes."
+    jump numero260
+
+label numero64:
+    "Vous avancez à découvert. Les Shikomes vous regar-dent approcher d'un oeil morne ;"
+    "ils dégagent une forte odeur de beurre rance. Alors que vous arrivez à leur hauteur, vous les prenez par surprise et vous passez à l'attaque."
+    "Il ne vous faut que quelques secondes pour en éliminer un, mais le second, en revanche, en profite pour beugler d'effroi."
+    "En l'espace de deux minutes, tout le château se met à fourmiller de gardes samouraïs et d'autres Shikomes."
+    "Vous tentez immédiatement de fuir, mais vous êtes rapidement submergé par le flot de vos poursuivants."
+    "Ils vous font prisonnier et vous accablent de sarcasmes, riant du Shogun et de son minable Senseï apparemment, ils savent qui vous êtes..."
+    "On vous traîne ensuite sans ménagement jusque dans les cachots, et l'on vous jette dans une sinistre cellule."
+    "Le geôlier, un homme gras et rougeaud, vêtu d'un pourpoint de cuir crasseux, vous grogne d'un air goguenard :"
+    g "— On te conduira demain devant le Shogun Tsietsin."
+    "Puis il vous ferme brutalement la porte à la figure."
+    "Vous voici seul. On vous a pris toutes vos armes et cela vous fait bien plus honte que l'indignité de votre capture et les humiliations que vous avez dû subir."
+    "Vous perdez 1 point d'Honneur."
+    $ PerteHonneur(1)
+    "A présent, il ne vous reste plus qu'à aller vous allonger sur la maigre paillasse qui occupe un coin du cachot et à essayer de trouver le sommeil en attendant le lendemain matin."
+    jump numero316
+
+label numero65:
+    "La nuit tombe, et vous n'êtes toujours pas arrivé à vous sortir des griffes de ce piège."
+    "Par ailleurs, vous éprouvez la désagréable sensation que les charbonniers vous épient, cachés dans les environs."
+    "Peu à peu, la nuit s'anime d'une multitude de bruits : bruissement des feuilles au gré du vent, trottinement des petits animaux qui peuplent le sous-bois et piaillements brefs de rapaces nocturnes."
+    "Soudain, tout se taît. Le vent lui-même s'est calmé."
+    "Quelques secondes plus tard, un seul bruit vient percer le silence pesant qui s'est abattu sur la forêt :"
+    "la démarche souple mais puissante d'une bête qui avance à pas feutrés. Vous l'entendez renifler votre piste."
+    "Tout à coup, elle pousse un rugissement féroce qui fait s'envoler une nuée d'oiseaux affolés."
+    "Il s'agit certainement d'un Shako-Gurubi, une espèce de panthère relativement commune dans ces régions boisées."
+    "Hélas ! vous êtes presque impuissant, pris au piège dans l'obscurité totale."
+    menu:
+        "Qu'allez-vous donc faire :"
+        "tirer de toutes vos forces sur votre jambe afin de vous arracher du piège à tout prix et vous défendre l'arme à la main":
+            jump numero119
+        "ou bien tenir votre sabre à bout de bras et vous préparer à lutter à l'aveuglette, en espérant que la bête ne vous attaquera pas":
+            jump numero139
+
+label numero66:
+    "Vous franchissez la porte de la « Montagne de l'Ineffable Sainteté»."
+    "Vous vous retrouvez au pied d'un haut sommet, facile à escalader, certes, mais dont l'ascension serait longue et exténuante."
+    "Néanmoins, comme il n'y a apparemment aucune autre chose à faire, vous commencez à grimper."
+    "Après une éternité, vous arrivez enfin au sommet."
+    "Le spectacle qui vous y attend vous laisse tout ébahi : une créature de noble stature se dresse juste devant vous."
+    "Ses yeux sont deux boules de feu ; elle a un corps de cheval pourvu de deux immenses ailes et surmonté d'une tête de lion."
+    "Il se dégage de tout son être une forte aura de puissance et de majesté."
+    "C'est un Ki-Rin, serviteur des dieux, représentant et défenseur de la justice et du bien."
+    "L'être magnifique vous observe pendant un court instant."
+    if honneur.m_Valeur >= 5:
+        jump numero340
+    else:
+        jump numero352
+
+label numero67:
+    "Les pointes du trident ont transpercé votre armure et vous ont brisé deux côtes."
+    "Vous perdez 4 points d'ENDURANCE."
+    $ PerteEndurance(4)
+    "Si vous survivez à cette douloureuse blessure, vous jugez préférable de vous faire le plus discret possible et vous vous éloignez rapidement de cet endroit bourbeux."
+    jump numero335
+
+# label numero68: ===> caser l'image de la vilaine hyène
+
+
+
+
 
 
 

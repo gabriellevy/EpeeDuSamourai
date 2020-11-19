@@ -19,4 +19,4 @@ ScriptError: could not find label 'numero134'.
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 L'épée du samouraï 1.0
-Thu Nov 19 19:59:26 2020
+Thu Nov 19 20:41:25 2020
