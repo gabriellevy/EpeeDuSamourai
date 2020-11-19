@@ -253,7 +253,7 @@ label numero59:
         "A présent, qu'allez-vous faire :"
         "ordonner à tous les hommes présents dans la charbonnière de s'agenouiller devant vous en signe de soumission":
             jump numero111
-        "ou bien décocher une flèche au jeune malotru qui vous a insulté"if PeutTirerALArc():
+        "ou bien décocher une flèche au jeune malotru qui vous a insulté" if PeutTirerALArc():
             jump numero123
         "tirer vos sabres":
             jump numero135
@@ -370,7 +370,94 @@ label numero67:
     "Si vous survivez à cette douloureuse blessure, vous jugez préférable de vous faire le plus discret possible et vous vous éloignez rapidement de cet endroit bourbeux."
     jump numero335
 
-# label numero68: ===> caser l'image de la vilaine hyène
+label numero68:
+    "Derrière la porte des « Anciennes Plaines » s'ouvre un paysage époustouflant : une immense étendue steppique où se dressent à perte de vue des collines basses, couvertes de taillis."
+    "Le ciel est bleu, sans un nuage, et l'air semble le plus pur et le plus frais que vous n'ayez jamais respiré."
+    "Soudain, vous voyez passer devant vous un cerf primitif qui disparaît en bon-dissant."
+    "Derrière vous, flottant entre terre et ciel, se trouve la porte qui vous ramènera au Centre des Univers."
+    "C'est alors que surgit un autre animal. Mais cette fois, c'est un énorme fauve : l'ancêtre du tigre, trois fois plus gros, et dont la gueule s'orne de redoutables crocs en forme de sabre."
+    "L'animal vous fixe sans ciller, puis il s'élance dans votre direction. Ses bonds sont si puissants qu'il semble voler. Dans quelques secondes, il sera sur vous."
+    menu:
+        "Qu'allez-vous faire :"
+        "exhiber le Phénix en Rubis" if phenixEnRubis:
+            jump numero214
+        "tirer une flèche avec votre arc" if PeutTirerALArc():
+            jump numero224
+        "ou souffler dans un cor" if aUnCor:
+            jump numero234
+        "Si vous jugez préférable de prendre immédiatement la porte afin de regagner le Centre des Univers":
+            jump numero8_choix
+
+label numero69:
+    "Les têtes désincarnées commencent à s'entrechoquer en hurlant et en proférant d'ignobles malédictions, puis elles se jettent sur vous et vous frappent à grands coups de crânes."
+    "Vous résistez pendant un moment à cette terrifiante attaque, mais vous finissez par être à moitié assommé et totalement incapable de vous défendre plus longtemps."
+    "Dans vos mouvements affolés et désordonnés, vous vous heurtez violemment contre la margelle du puits et vous tombez à la renverse, faisant une chute de quelque vingt mètres avant de plonger dans une eau glaciale."
+    jump numero25
+
+label numero70:
+    "Vous suivez la piste de l'étrange femme à travers les bois, mais vous perdez sa trace au bout de quelques dizaines de mètres."
+    "Vous continuez malgré tout à avancer au hasard. Peu après, vous réalisez que vous êtes complètement perdu :"
+    "vous avez l'impression que la forêt se modifie sans cesse autour de vous et vous n'avez plus le moindre sens de l'orientation."
+    "Vous voici condamné à errer pour l'éternité dans la Forêt Enchantée. Peut-être, un jour, croiserez-vous le chemin de la jeune femme ? En attendant, votre aventure se termine ici."
+
+label numero71:
+    "La première personne que vous rencontrez est une vieille paysanne qui porte sur la tête un fichu en soie défraîchie."
+    "Elle semble triste et mélancolique, mais accepte néanmoins de vous conduire chez elle."
+    "Son humble demeure est une vieille cabane en bois dont un des murs est à moitié défoncé."
+    "La femme vous désigne une paillasse dans un coin et, dans l'âtre, une petite marmite remplie de gruau."
+    menu:
+        "Si vous souhaitez réparer le mur avant de vous installer":
+            jump numero215
+        "Si vous préférez vous rassasier sans plus attendre":
+            jump numero203
+
+label numero72:
+    "Votre arme décrit un rapide arc de cercle et entaille profondément la jambe du cavalier."
+    "Ce dernier laisse échapper un hurlement de douleur et tombe de sa selle."
+    "Avant même qu'il ne touche le sol, vous lui tranchez la tête d'un coup de katana."
+    "Maintenant, la situation vous apparaît sous un jour nouveau :"
+    "le seigneur Tsietsin est un félon et ses hommes sont en train de semer la terreur dans le village, pillant et massacrant des paysans sans défense."
+    menu:
+        "Si vous décidez d'abandonner le village à son triste sort, pour donner priorité absolue à votre mission":
+            jump numero104
+        "Si vous voulez aller prêter main-forte aux paysans et attaquer le premier samouraï que vous rencontrerez":
+            jump numero116
+        "Si vous jugez plus efficace de vous rendre au village et de proclamer qu'en tant que Senseï du Shogun, vous vous battrez en duel, selon les règles de l'honneur, contre quiconque osera se dresser contre vous":
+            jump numero128
+        "Enfin, si vous maîtrisez l'art du Kyujutsu, vous pouvez gagner le village et, vous cachant de maison en maison, abattre les pillards un à un, au fur et à mesure qu'ils apparaîtront dans votre ligne de tir" if PeutTirerALArc():
+            jump numero140
+
+label numero73:
+    "Vous avancez d'un pas prudent sur la jetée en pierre."
+    "Celle-ci est immergée de quelques centimètres et le limon vaseux qui la recouvre la rend dangereusement glissante."
+    "Soudain, deux monstres à la peau verte et squameuse jaillissent des profondeurs de la rivière et prennent pied sur la jetée."
+    "Ils sont munis d'impressionnantes griffes palmées qui leur permettent d'avancer sans glisser sur la vase."
+    menu:
+        "Si vous voulez sauter de la jetée et plonger dans les eaux écumeuses qui rugissent en aval":
+            jump numero49
+        "Si vous préférez rebrousser chemin et, une fois la berge atteinte, vous enfuir au plus vite et chercher un endroit plus sûr pour traverser":
+            jump numero105
+        "Vous pouvez tenter d'effrayer vos ennemis en tirant une flèche hurleuse." if PeutTirerALArc():
+            jump numero21
+
+label numero74:
+    "Vous avez vaincu le Dai-Oni ! Ce dernier gît à vos pieds et sa vie ne tient plus qu'à un fil. Peu à peu, les ombres fantomatiques quittent l'Arène."
+    "Quand vous restez seul à seul avec votre adversaire, vous l'entendez murmurer avec peine."
+    d "— Tu as gagné, mortel, et je suis tenu, par les lois célestes qui régissent le Tournoi de l'Espace, de t'accorder une seule et unique question."
+    "L'aura de magie qui auréolait le Dai-Oni est en train de disparaître."
+    "De votre côté, la victoire que vous venez de remporter sur cet adversaire hors du commun vous permet de regagner 1 point d'HABILETÉ, 1 point de CHANCE ou 2 points d'ENDURANCE, selon les dommages qui vous ont éventuellement été infligés lors du précédent combat."
+    $ GainHabilete(1)
+    $ GainChance(1)
+    $ GainEndurance(2)
+    menu:
+        "A présent, qu'allez-vous demander au Dai-Oni :"
+        "Quel est le secret de Mort Joyeuse ?":
+            jump numero206
+        "Comment vaincre Ikiru, Maître des Ténèbres ?":
+            jump numero188
+        "Pouvez-vous m'aider à accomplir ma mission et anéantir Ikiru ?":
+            jump numero150
+
 
 
 

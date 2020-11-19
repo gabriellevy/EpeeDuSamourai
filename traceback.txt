@@ -1,22 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/numeros41_80.rpy", line 242, in script
-    jump numero134
-ScriptError: could not find label 'numero134'.
+  File "game/numeros41_80.rpy", line 244, in script
+    jump numero242
+ScriptError: could not find label 'numero242'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/numeros41_80.rpy", line 242, in script
-    jump numero134
+  File "game/numeros41_80.rpy", line 244, in script
+    jump numero242
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
     rv = renpy.game.script.lookup(target)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'numero134'.
+ScriptError: could not find label 'numero242'.
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 L'épée du samouraï 1.0
-Thu Nov 19 20:41:25 2020
+Thu Nov 19 22:02:53 2020

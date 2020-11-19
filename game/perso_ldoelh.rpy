@@ -24,6 +24,10 @@ init -1 python:
     disciplineKarumijutsu = "Karumijutsu"
     disciplineNitoKenjutsu = "Ni-to-Kenjutsu"
 
+    # objets
+    phenixEnRubis = False # A un Phénix en Rubis
+    aUnCor = False
+
     # soutiens lors du tournoi de l'espace
     soutienTatsu = False
     soutienKiRin = False
