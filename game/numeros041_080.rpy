@@ -458,7 +458,18 @@ label numero74:
         "Pouvez-vous m'aider à accomplir ma mission et anéantir Ikiru ?":
             jump numero150
 
-
+label numero75:
+    scene bg numero75
+    "Alors que vous vous approchez de la statue d'Hammurabi, le magicien réapparaît et, simultanément, la statue commence à s'animer :"
+    "elle fléchit ses pattes grêles, fait bourdonner ses ailes et vous fixe de ses yeux à facettes."
+    "Dès que le magicien disparaît de nouveau, des milliers d'insectes fondent sur vous. Ce sont les serviteurs d'Hammurabi, qui accourent en masse pour le protéger."
+    "Bientôt, vous êtes enveloppé, de la tête aux pieds, d'un essaim de plusieurs centimètres d'épaisseur !"
+    "C'est alors que la prêtresse entonne une lancinante berceuse : le chant des Essaims."
+    "Au fur et à mesure que s'égrènent les notes harmonieuses de la jeune femme, les insectes s'apaisent et tombent comme des mouches autour de vous."
+    "Les milliers de petits corps finissent par former un véritable tapis sur le sol, mais la prêtresse continue de chanter, et vous voyez Hammurabi commencer à se balancer en rythme."
+    "En tant que disciple du culte de la Divinité des Mouches, elle seule pouvait vous aider à apaiser son courroux."
+    "La prêtresse s'incline ensuite au pied d'Hammurabi et vous fait signe d'avancer. Le chemin de la fontaine est libre à présent."
+    jump numero95
 
 
 

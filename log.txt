@@ -1,4 +1,4 @@
-Thu Nov 19 22:02:44 2020
+Fri Nov 20 20:56:56 2020
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
  
@@ -7,16 +7,16 @@ Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.29s
-Loading save slot metadata. took 0.02s
+Loading script took 0.17s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.09s
+Running init code took 0.08s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Mathieu\\AppData\\Roaming/RenPy/backups\\EpeeDuSamourai':
-Dump and make backups. took 0.08s
+Dump and make backups. took 0.11s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.02s
@@ -24,10 +24,10 @@ DPI scale factor: 1.000000
 Creating interface object took 0.05s
 Cleaning stores took 0.00s
 Init translation took 0.02s
-Build styles took 0.01s
+Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.08s
+Analyze screens took 0.02s
+Save screen analysis took 0.07s
 Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.07s
@@ -414,25 +414,25 @@ Texture testing:
 - 2048px textures work.
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.41199994087s
+Total time until interface ready: 1.19800019264s
 - Target is 5 frames in 0.333333333333 seconds.
 - Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.006000 seconds.
-- Frame drawn at 0.021000 seconds.
-- Frame drawn at 0.038000 seconds.
-- Frame drawn at 0.054000 seconds.
-- 0.054000 seconds to render 5 frames.
+- Frame drawn at 0.005000 seconds.
+- Frame drawn at 0.016000 seconds.
+- Frame drawn at 0.033000 seconds.
+- Frame drawn at 0.052000 seconds.
+- 0.052000 seconds to render 5 frames.
 
 Full traceback:
-  File "game/numeros41_80.rpy", line 244, in script
-    jump numero242
+  File "game/numeros041_080.rpy", line 226, in script
+    jump numero92
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\ast.py", line 1697, in execute
     rv = renpy.game.script.lookup(target)
   File "D:\Dev\Renpy\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
     raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'numero242'.
+ScriptError: could not find label 'numero92'.
 
 While running game code:
-  File "game/numeros41_80.rpy", line 244, in script
-    jump numero242
-ScriptError: could not find label 'numero242'.
+  File "game/numeros041_080.rpy", line 226, in script
+    jump numero92
+ScriptError: could not find label 'numero92'.
