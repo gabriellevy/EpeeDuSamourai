@@ -3,7 +3,7 @@
 #initialisation persos
 init -1 python:
     import random
-    from despin.abs import carac
+    from abs import carac
 
     endurance = carac.Carac("Endurance", 12 + random.randint(1, 6) + random.randint(1, 6))
     maxEndurance = endurance.m_Valeur

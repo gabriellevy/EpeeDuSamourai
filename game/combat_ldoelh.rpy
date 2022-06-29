@@ -1,7 +1,7 @@
 
 
 init -2 python:
-    from despin.ldoelh import ennemi
+    from spe.ldoelh import ennemi
     import random
 
     unApresLautre_ = True
