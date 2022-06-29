@@ -471,7 +471,18 @@ label numero75:
     "La prêtresse s'incline ensuite au pied d'Hammurabi et vous fait signe d'avancer. Le chemin de la fontaine est libre à présent."
     jump numero95
 
-
+label numero76:
+    scene bg numero76
+    "L'enceinte de l'Arène commence à miroiter, puis à se dissoudre graduellement. Un autre lieu prend forme à sa place — un endroit sombre, très sombre. C'est une immense galerie en marbre noir, étayée sur toute sa longueur par deux rangées de piliers massifs."
+    "Des braseros à charbon .éclairent faiblement l'endroit, faisant naître des ombres rougeoyantes et mouvantes qui semblent se poursuivre sur le dallage lisse du sol."
+    "Tout au bout de la galerie s'ouvre un large puits d'où s'échappent des volutes de fumée âcre et nocive. Derrière se dresse un grand trône en pierre sombre et terne ; cet ouvrage a été sculpté de main de maître ; gargouilles, vermiculures, entrelacs de formes tortueuses, effigies en surplomb, bref, une multitude d'ornements biscornus destinés à laisser le siège même dans l'ombre."
+    "De l'endroit où vous êtes, vous arrivez à peine à distinguer la silhouette sombre et encapuchonnée qui y trône. Le mystérieux personnage semble fixer quelque chose droit devant lui : sur un présentoir, un magnifique nodachi, épée à deux mains, dans un fourreau d'or filigrané. Cette arme ne paraît vraiment pas à sa place dans cet endroit sinistre et respirant le mal."
+    "Vous reconnaissez Mort Joyeuse, l'Epée du samouraï, et votre coeur fait un bond. Mais soudain, le personnage encapuchonné tressaille sur son siège et rejette la tête en arrière dans un mouvement de surprise. Vous découvrez alors qu'il n'y a rien sous le capuchon, rien qu'une noirceur impénétrable ! Un murmure sifflant vous parvient, comme une lente expiration :"
+    i "Qui ose venir à Onikaru, puits des Démons, et s'exposer ainsi à la fureur d'Ikiru, Maître des Ombres ?"
+    if secretMortJoyeuse_:
+        jump numero152
+    else:
+        jump numero94
 
 
 

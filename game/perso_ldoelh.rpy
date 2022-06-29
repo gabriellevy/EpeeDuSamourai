@@ -13,6 +13,7 @@ init -1 python:
 
     # -------------> infos diverses spécifiques aventure
     cartePagodeEcarlate_ = False # a une carte qui mène à la pagode écarlate
+    secretMortJoyeuse_ = False
 
     flechesSaule = carac.Carac("Flèches de saule", 0)
     flechesHarpon = carac.Carac("Flèches harpon", 0)

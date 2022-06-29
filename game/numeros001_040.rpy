@@ -1,3 +1,5 @@
+# FINI
+
 label numero1:
     "Peu avant votre départ, vous rassemblez vos armes : votre katana (un long sabre) et votre wakizashi (un sabre court), puis vous revêtez votre armure et vous prenez soin d'emporter quelques Provisions."
     "Les gardes du Shogun vous saluent avec respect lorsque vous franchissez les portes de la ville."
