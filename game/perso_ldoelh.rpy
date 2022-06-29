@@ -12,6 +12,7 @@ init -1 python:
     honneur = carac.Carac("Honneur", 3)
 
     # -------------> infos diverses spécifiques aventure
+    # ATTENTION A FAIRE : rien de tout ça ne se sauvegarde. Il faudra probablement en faire des caracs de situation (mais que faire pour sauvegarder un combat en cours ?) etc
     cartePagodeEcarlate_ = False # a une carte qui mène à la pagode écarlate
     secretMortJoyeuse_ = False
 
