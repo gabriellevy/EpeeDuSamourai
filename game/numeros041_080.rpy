@@ -484,6 +484,12 @@ label numero76:
     else:
         jump numero94
 
+label numero77:
+    "Vous quittez rapidement la charbonnière, poursuivi par les sarcasmes des paysans qui vous accusent de déserter le camp du Shogun et de fuir de peur qu'au jour de sa défaite, son successeur ne vous exécute, vous et les autres partisans tombés en disgrâce."
+    "De fait, vous savez pertinemment que tel pourrait bien être votre sort si le Shogun que vous servez venait à être renversé, car l'exécution des traîtres que vous avez souvent dû accomplir en son nom appellera forcément sur vous la vengeance du Shogun adverse et des familles de vos victimes."
+    "Toutes ces accusations tourmentent votre conscience, car vous avez laissé salir impunément le nom sacré de Kihei Hasekawa, votre Shogun. Par conséquent, vous perdez 1 point d'Honneur."
+    
+    jump numero94
 
 
 

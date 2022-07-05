@@ -1,12 +1,14 @@
-
-
 #initialisation persos
 init -1 python:
     import random
     from abs import carac
 
-    endurance = carac.Carac("Endurance", 12 + random.randint(1, 6) + random.randint(1, 6))
-    maxEndurance = endurance.m_Valeur
+    def initBaseCaracs():
+        global situation_
+        enduranceVal = 12 + random.randint(1, 6) + random.randint(1, 6)
+        situation_.SetValCarac("endurance", enduranceVal)
+        situation_.SetValCarac("maxEndurance", enduranceVal)
+
     maxRepas = 10
     repas = carac.Carac("Repas", maxRepas)
     honneur = carac.Carac("Honneur", 3)
@@ -77,15 +79,16 @@ init -1 python:
 
     def GainEndurance(num):
         global endurance, maxEndurance
-        endurance.m_Valeur = endurance.m_Valeur + num
-        if endurance.m_Valeur > maxEndurance.m_Valeur:
-            endurance.m_Valeur = maxEndurance.m_Valeur
+        situation_.AjouterACarac("endurance", num)
+        maxVal = situation_.GetValCaracInt("maxEndurance")
+        if situation_.GetValCaracInt("endurance") > maxVal:
+            situation_.SetValCarac("endurance", maxVal)
 
     def PerteEndurance(num):
-        global endurance
-        endurance.m_Valeur = endurance.m_Valeur - num
-        if endurance.m_Valeur <= 0:
-            endurance.m_Valeur = 0
+        global situation_
+        situation_.RetirerACarac("endurance", num)
+        if situation_.GetValCaracInt("endurance") <= 0:
+            situation_.SetValCarac("endurance", 0)
             renpy.jump("mort")
 
     def GainHonneur(num):

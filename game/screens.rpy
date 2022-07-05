@@ -1533,6 +1533,8 @@ style slider_pref_slider:
 
 screen profil_joueur():
     tag interface_personnage
+    $ valEndurance = situation_.GetValCaracInt("endurance")
+    $ valMaxEndurance = situation_.GetValCaracInt("maxEndurance")
     frame:
         xpos 5 ypos 5
         grid 2 5:
@@ -1540,9 +1542,9 @@ screen profil_joueur():
             spacing 5
             text _("[habileteCalculee.m_Id] : ")
             text _("[habileteCalculee.m_Valeur]")
-            text _("[endurance.m_Id] ([endurance.m_Valeur]/[maxEndurance])")
+            text _("Endurance ([valEndurance]/[valMaxEndurance])")
             bar:
-                value AnimatedValue(endurance.m_Valeur, maxEndurance, 1.0)
+                value AnimatedValue(valEndurance, valMaxEndurance, 1.0)
             text _("[chance.m_Id] ([chance.m_Valeur]/[maxChance])")
             bar:
                 value AnimatedValue(chance.m_Valeur, maxChance, 1.0)

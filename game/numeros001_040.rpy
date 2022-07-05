@@ -311,7 +311,7 @@ label numero25:
     "Alourdi par le poids de votre armure, vous vous enfoncez profondément dans les eaux glacées du puits."
     "En vous débarrassant de votre lourde cuirasse, peut-être parviendrez-vous à remonter vers la surface à temps ?"
     "Hélas ! vos poumons sont sur le point d'exploser et vos forces vous abandonnent peu à peu."
-    if endurance.m_Valeur <= 12:
+    if situation_.GetValCaracInt("endurance") <= 12:
         jump numero353
     else:
         jump numero313

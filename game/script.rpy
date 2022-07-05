@@ -1,9 +1,5 @@
-﻿# Vous pouvez placer le script de votre jeu dans ce fichier.
+﻿default situation_ = SituationSpe("situation_")
 
-# Déclarez sous cette ligne les images, avec l'instruction 'image'
-# ex: image eileen heureuse = "eileen_heureuse.png"
-
-# Déclarez les personnages utilisés dans le jeu.
 define s = Character('Shogun Kihei Hasekawa', who_outlines=[(2, "#894646",1,1)], color="#580404")
 define t = Character('Tatsu', color="#e30909")
 define d = Character('Dai-Oni', color="#2b1323")
@@ -18,9 +14,9 @@ define narrator = Character(color="#fafad8", what_italic=True)
 define audio.musique_douce = "musique/Beautiful Chinese Music - Chinese Zither and Bamboo Flute 2.mp3"
 
 label start:
-
-# mise en place des caractéristiques et des objets
-# la vraie initialisation du perso est dans perso_ldoelh.rpy
+    # mise en place des caractéristiques et des objets
+    # la vraie initialisation du perso est dans perso_ldoelh.rpy
+    $ initBaseCaracs()
     scene bg campagne_japonaise
     play music musique_douce
     show screen profil_joueur
