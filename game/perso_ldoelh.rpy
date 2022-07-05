@@ -8,10 +8,10 @@ init -1 python:
         enduranceVal = 12 + random.randint(1, 6) + random.randint(1, 6)
         situation_.SetValCarac("endurance", enduranceVal)
         situation_.SetValCarac("maxEndurance", enduranceVal)
+        situation_.SetValCarac("honneur", 3)
 
     maxRepas = 10
     repas = carac.Carac("Repas", maxRepas)
-    honneur = carac.Carac("Honneur", 3)
 
     # -------------> infos diverses spécifiques aventure
     # ATTENTION A FAIRE : rien de tout ça ne se sauvegarde. Il faudra probablement en faire des caracs de situation (mais que faire pour sauvegarder un combat en cours ?) etc
@@ -92,14 +92,14 @@ init -1 python:
             renpy.jump("mort")
 
     def GainHonneur(num):
-        global honneur
-        honneur.m_Valeur = honneur.m_Valeur + num
+        global situation_
+        situation_.AjouterACarac("honneur", num)
 
     def PerteHonneur(num):
-        global honneur
-        honneur.m_Valeur = honneur.m_Valeur - num
-        if honneur.m_Valeur <= 0:
-            honneur.m_Valeur = 0
+        global situation_
+        situation_.RetirerACarac("honneur", num)
+        if situation_.GetValCaracInt("honneur") <= 0:
+            situation_.SetValCarac("honneur", 0)
             renpy.jump("numero99")
 
     def TentezVotreChance():

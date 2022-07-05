@@ -79,7 +79,7 @@ label numero7:
     "Vous vous préparez ensuite à attaquer ses compagnons, mais ces derniers se dispersent précipitamment et courent se réfugier au fond des bois."
     "Après avoir rapidement éteint les dernières flammes menaçantes, vous reprenez votre chemin."
     "Vous avez vaillamment défendu l'honneur du Shogun lors de cet affrontement, et vous pouvez par conséquent ajouter 1 point à votre propre Honneur."
-    $ honneur.m_Valeur = honneur.m_Valeur + 1
+    $ GainHonneur( 1)
     jump numero195
 
 label numero8:
