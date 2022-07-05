@@ -491,6 +491,15 @@ label numero77:
     $ PerteHonneur(1)
     jump numero94
 
+label numero78:
+    "Vous franchissez la porte des « Sables Eternels d'Akhon ». Aussitôt, votre front se couvre de sueur et vous sentez une vague de chaleur torride vous submerger de la tête aux pieds. Sous un ciel jaune où brille un soleil gros comme vous n'en avez jamais vu s'étend un désert sans fin : les Sables Éternels d'Akhon."
+    "Derrière vous, la porte reconduisant au Centre des Univers flotte toujours entre terre et ciel. Soudain, un cri perçant déchire le silence et un étrange rapace surgit des cieux."
+    "C'est l'aigle le plus grand que vous ayez jamais vu : il a plusieurs mètres d'envergure, ses yeux rouges étincellent et ses longues plumes dorées semblent filigranées d'or pur."
+    "Mais le plus fascinant est que le corps fuselé de l'oiseau est nimbé de flammes jaunes qui courent le long de son plumage sans pourtant le consumer ! C'est un Phénix."
+    if ALePhenixRubis():
+        jump numero348
+    else:
+        jump numero360
 
 
 

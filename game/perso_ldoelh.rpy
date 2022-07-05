@@ -10,8 +10,9 @@ init -1 python:
         situation_.SetValCarac("maxEndurance", enduranceVal)
         situation_.SetValCarac("honneur", 3)
 
-    maxRepas = 10
-    repas = carac.Carac("Repas", maxRepas)
+        maxRepas = 10
+        situation_.SetValCarac("repas", maxRepas)
+        situation_.SetValCarac("maxRepas", maxRepas)
 
     # -------------> infos diverses spécifiques aventure
     # ATTENTION A FAIRE : rien de tout ça ne se sauvegarde. Il faudra probablement en faire des caracs de situation (mais que faire pour sauvegarder un combat en cours ?) etc
@@ -46,6 +47,12 @@ init -1 python:
     habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
     aUnKatana = True
     habile_ = True # true si le dernier lancer baé sur l'habileté a donné une réussite
+
+    def ObtientLePhenixRubis():
+        situation_.SetValCarac("PhenixRubis", 1)
+
+    def ALePhenixRubis():
+        return situation_.GetValCaracInt("PhenixRubis") == 1
 
     def PeutTirerALArc():
         return disciplineKyujutsu == discipline.m_Valeur and ADesFleches()
