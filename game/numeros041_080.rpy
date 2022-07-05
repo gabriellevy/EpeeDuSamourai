@@ -379,7 +379,7 @@ label numero68:
     "L'animal vous fixe sans ciller, puis il s'élance dans votre direction. Ses bonds sont si puissants qu'il semble voler. Dans quelques secondes, il sera sur vous."
     menu:
         "Qu'allez-vous faire :"
-        "exhiber le Phénix en Rubis" if phenixEnRubis:
+        "exhiber le Phénix en Rubis" if ALePhenixRubis():
             jump numero214
         "tirer une flèche avec votre arc" if PeutTirerALArc():
             jump numero224

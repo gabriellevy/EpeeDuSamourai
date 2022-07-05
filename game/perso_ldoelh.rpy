@@ -10,9 +10,16 @@ init -1 python:
         situation_.SetValCarac("maxEndurance", enduranceVal)
         situation_.SetValCarac("honneur", 3)
 
+        # repas
         maxRepas = 10
         situation_.SetValCarac("repas", maxRepas)
         situation_.SetValCarac("maxRepas", maxRepas)
+
+        # objets
+        situation_.SetValCarac("PhenixRubis", 0)
+
+        # caracs liées au combat :
+        situation_.SetValCarac("valEnduranceRestanteEnnemi_", 0) # valeur à partir de laquelle le combat est considéré termié (endurance restante)
 
     # -------------> infos diverses spécifiques aventure
     # ATTENTION A FAIRE : rien de tout ça ne se sauvegarde. Il faudra probablement en faire des caracs de situation (mais que faire pour sauvegarder un combat en cours ?) etc
@@ -30,7 +37,6 @@ init -1 python:
     disciplineNitoKenjutsu = "Ni-to-Kenjutsu"
 
     # objets
-    phenixEnRubis = False # A un Phénix en Rubis
     aUnCor = False
 
     # soutiens lors du tournoi de l'espace
@@ -52,6 +58,7 @@ init -1 python:
         situation_.SetValCarac("PhenixRubis", 1)
 
     def ALePhenixRubis():
+        # A un Phénix en Rubis
         return situation_.GetValCaracInt("PhenixRubis") == 1
 
     def PeutTirerALArc():
