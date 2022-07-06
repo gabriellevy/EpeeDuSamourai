@@ -43,7 +43,7 @@ label numero4:
         "Lancer deux dés":
             $ texteResultatChance = TentezVotreChance()
     "[texteResultatChance]"
-    if chanceux:
+    if Chanceux():
         jump numero16
     else:
         jump numero38
@@ -66,7 +66,7 @@ label numero6:
         "Lancer deux dés":
             $ texteResultatChance = TentezVotreChance()
     "[texteResultatChance]"
-    if chanceux:
+    if Chanceux():
         jump numero14
     else:
         jump numero28
@@ -256,7 +256,7 @@ label numero20:
         "Lancer deux dés":
             $ texteResultatChance = TentezVotreChance()
     "[texteResultatChance]"
-    if chanceux:
+    if Chanceux():
         jump numero282
     else:
         jump numero296

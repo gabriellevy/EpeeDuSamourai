@@ -1538,6 +1538,8 @@ screen profil_joueur():
     $ valhonneur = situation_.GetValCaracInt("honneur")
     $ valRepas = situation_.GetValCaracInt("repas")
     $ valMaxRepas = situation_.GetValCaracInt("maxRepas")
+    $ valChance = situation_.GetValCaracInt("chance")
+    $ valMaxChance = situation_.GetValCaracInt("chance")
     frame:
         xpos 5 ypos 5
         grid 2 5:
@@ -1548,9 +1550,9 @@ screen profil_joueur():
             text _("Endurance ([valEndurance]/[valMaxEndurance])")
             bar:
                 value AnimatedValue(valEndurance, valMaxEndurance, 1.0)
-            text _("[chance.m_Id] ([chance.m_Valeur]/[maxChance])")
+            text _("Chance ([valChance]/[valMaxChance])")
             bar:
-                value AnimatedValue(chance.m_Valeur, maxChance, 1.0)
+                value AnimatedValue(valChance, valMaxChance, 1.0)
             text _("Repas ([valRepas]/[valMaxRepas])")
             bar:
                 value AnimatedValue(valRepas, valMaxRepas, 1.0)

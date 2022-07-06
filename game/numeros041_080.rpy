@@ -507,20 +507,4 @@ label numero78:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# --------------youpi
+# -------------- A FAIRE suite des numéros

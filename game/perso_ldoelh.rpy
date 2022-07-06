@@ -15,6 +15,13 @@ init -1 python:
         situation_.SetValCarac("repas", maxRepas)
         situation_.SetValCarac("maxRepas", maxRepas)
 
+        # chance
+        chanceVal = 6 + random.randint(1, 6)
+        maxChanceVal = chanceVal
+        situation_.SetValCarac("chance", chanceVal)
+        situation_.SetValCarac("maxChance", maxChanceVal)
+        situation_.SetValCarac("chanceux", 1)# 1 si le dernier lancer a donné comme résultat "chanceux"
+
         # objets
         situation_.SetValCarac("PhenixRubis", 0)
 
@@ -22,7 +29,6 @@ init -1 python:
         situation_.SetValCarac("valEnduranceRestanteEnnemi_", 0) # valeur à partir de laquelle le combat est considéré termié (endurance restante)
 
     # -------------> infos diverses spécifiques aventure
-    # ATTENTION A FAIRE : rien de tout ça ne se sauvegarde. Il faudra probablement en faire des caracs de situation (mais que faire pour sauvegarder un combat en cours ?) etc
     cartePagodeEcarlate_ = False # a une carte qui mène à la pagode écarlate
     secretMortJoyeuse_ = False
 
@@ -43,11 +49,6 @@ init -1 python:
     soutienTatsu = False
     soutienKiRin = False
 
-    # chance
-    chance = carac.Carac("Chance", 6 + random.randint(1, 6))
-    maxChance = chance.m_Valeur
-    chanceux = True # true si le dernier lancer a donné comme résultat "chanceux"
-
     # habileté :
     habilete = carac.Carac("Habileté de base", random.randint(7, 12))
     habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
@@ -61,6 +62,9 @@ init -1 python:
         # A un Phénix en Rubis
         return situation_.GetValCaracInt("PhenixRubis") == 1
 
+    def Chanceux():
+        return situation_.GetValCaracInt("chanceux") == 1
+
     def PeutTirerALArc():
         return disciplineKyujutsu == discipline.m_Valeur and ADesFleches()
 
@@ -68,16 +72,17 @@ init -1 python:
         return flechesSaule.m_Valeur > 0 or flechesHarpon.m_Valeur > 0 or flechesPerforantes.m_Valeur > 0 or flechesHurleuses.m_Valeur > 0
 
     def GainDeChance(num):
-        global chance, maxChance
-        chance.m_Valeur = chance.m_Valeur + num
-        if chance > maxChance:
-            chance = maxChance
+        global situation_
+        maxVal = situation_.GetValCaracInt("maxChance")
+        situation_.AjouterACarac("chance", num)
+        if situation_.GetValCaracInt("chance") > maxVal:
+            situation_.SetValCarac("chance", maxVal)
 
     def PerteChance(num):
-        global chance, maxChance
-        chance.m_Valeur = chance.m_Valeur - num
-        if chance.m_Valeur < 0:
-            chance.m_Valeur = 0
+        global situation_
+        situation_.RetirerACarac("chance", num)
+        if situation_.GetValCaracInt("chance") < 0:
+            situation_.SetValCarac("chance", 0)
 
     def GainDeHabilete(num):
         global habilete
@@ -92,7 +97,7 @@ init -1 python:
         CalculerHabilete()
 
     def GainEndurance(num):
-        global endurance, maxEndurance
+        global situation_
         situation_.AjouterACarac("endurance", num)
         maxVal = situation_.GetValCaracInt("maxEndurance")
         if situation_.GetValCaracInt("endurance") > maxVal:
@@ -117,16 +122,16 @@ init -1 python:
             renpy.jump("numero99")
 
     def TentezVotreChance():
-        global chance, chanceux
+        global situation_
         jet = random.randint(1, 6) + random.randint(1, 6)
         texte = "rien encore"
-        if jet <= chance.m_Valeur:
-            chanceux = True
+        if jet <= situation_.GetValCaracInt("chance"):
+            situation_.SetValCarac("chanceux", 1)
             texte = "{} est inférieur ou égal à votre chance de {} : vous êtes chanceux !".format(jet, chance)
         else:
-            chanceux = False
+            situation_.SetValCarac("chanceux", 0)
             texte = "{} est supérieur à votre chance de {} : vous êtes malchanceux !".format(jet, chance)
-        chance.m_Valeur = chance.m_Valeur - 1
+        PerteChance(1)
         return texte
 
     def TentezVotreHabilete():

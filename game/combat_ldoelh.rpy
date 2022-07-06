@@ -172,6 +172,6 @@ label TesteChanceQuandBlessure:
         "Lancer deux dés":
             $ texteResultatChance = TentezVotreChance()
     "[texteResultatChance]"
-    if not chanceux:
+    if not Chanceux():
         $ MalChanceuxQuandBlessure()
     jump testerFinCombat
