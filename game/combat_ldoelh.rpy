@@ -4,15 +4,22 @@ init -2 python:
     from spe.ldoelh import ennemi
     import random
 
-    unApresLautre_ = True
-    ennemis_ = list()
-    jumpFinCombat_ = "???"
-    testQuandBlesse_ = None
-    gotoLabelQuandBlesseEtMalchanceux_ = ""
-    tourGagneParJoueur_ = False # True si le joueur a belssé son ennemi
-    tourPerduParJoueur_ = False # True si l'ennemi a blessé le joueur
-    malusHabilete_ = 0
-    gotoLabelQuandEnnemiBlesse_ = ""
+    ResetValsParDefaut()
+
+    def ResetValsParDefaut():
+        unApresLautre_ = True
+        ennemis_ = list()
+        jumpFinCombat_ = "???"
+        testQuandBlesse_ = None
+        gotoLabelQuandBlesseEtMalchanceux_ = ""
+        tourGagneParJoueur_ = False # True si le joueur a belssé son ennemi
+        tourPerduParJoueur_ = False # True si l'ennemi a blessé le joueur
+        malusHabilete_ = 0
+        gotoLabelQuandEnnemiBlesse_ = ""
+        doublePourBlesser_ = False # si True, alors le joueur n'inflige qu'un dégât par blessure à cet ennemi, sauf si il obtient un double aux dés
+
+    def SetDoublePourBlesser():
+        doublePourBlesser_ = True
 
     def AjouterEnnemi(nom, habilete, endurance):
         nouvEnnemi = ennemi.Ennemi(nom, habilete, endurance)
@@ -78,6 +85,7 @@ init -2 python:
     def TesterFinCombat():
         global jumpFinCombat_, testFinCombat_
         if testFinCombat_():
+            ResetValsParDefaut()
             renpy.jump(jumpFinCombat_)
         else:
             renpy.jump("debutTourDeCombat")
@@ -112,7 +120,9 @@ init -2 python:
         tourGagneParJoueur_ = False
         tourPerduParJoueur_ = False
 
-        resDeJoueur = LancerDe() + LancerDe()
+        resDe1 = LancerDe()
+        resDe2 = LancerDe()
+        resDeJoueur = resDe1 + resDe2
         resJoueur = habilete.m_Valeur + resDeJoueur - malusHabilete_
         texte = "Vous obtenez {} que vous ajoutez à votre habileté ".format(resDeJoueur)
         if malusHabilete_ > 0:
@@ -125,6 +135,9 @@ init -2 python:
         degats = 2
         texte = texte + "\n -> "
         if resJoueur > resEnnemi:
+            if doublePourBlesser_ and resDe1 != resDe2:
+                degats = 1
+                texte =  "{}\n Vous n'avez pas obtenu de double aux dés, les dégâts sont donc réduits à 1.".format(texte)
             BlesseEnnemi(degats)
             tourGagneParJoueur_ = True
             if ennemi.m_Endurance <= 0:
