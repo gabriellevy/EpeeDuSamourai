@@ -188,7 +188,7 @@ label numero14:
     "Tsietsin devant être dans son palais en ce moment, il est primordial de vous débarrasser de lui avant toute chose."
     "Vous attendez que la nuit tombe avant d'entrer en action."
     menu:
-        "Grâce à l'art du Kyujutsu, vous pouvez tenter de supprimer les deux Shikomes en leur portant à chacun un seul coup mortel" if disciplineKyujutsu == discipline.m_Valeur:
+        "Grâce à l'art du Kyujutsu, vous pouvez tenter de supprimer les deux Shikomes en leur portant à chacun un seul coup mortel" if ALeKyujutsu():
             jump numero46
         "vous pouvez essayer de vous approcher furtivement afin de les attaquer par surprise":
             jump numero64

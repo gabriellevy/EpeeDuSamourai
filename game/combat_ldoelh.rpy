@@ -155,7 +155,7 @@ init -2 python:
 # fin python
 
 label debutCombat:
-    if discipline == disciplineIaijutsu:
+    if ALeIaijutsu():
         "Grâce à votre maîtrise du Iaijutsu vous infligez 3 dégâts en dégainant votre sabre d'un unique mouvement fulgurant et maîtrisé."
         $ BlesseEnnemi(3)
 

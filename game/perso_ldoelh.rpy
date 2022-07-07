@@ -31,13 +31,14 @@ init -1 python:
         situation_.SetValCarac("valEnduranceRestanteEnnemi_", 0) # valeur à partir de laquelle le combat est considéré termié (endurance restante)
         ResetValsParDefaut() # valeurs liées au combat
 
-        discipline = DisciplineAleatoire()
+        situation_.SetValCarac("discipline", DisciplineAleatoire())
 
     flechesSaule = carac.Carac("Flèches de saule", 0)
     flechesHarpon = carac.Carac("Flèches harpon", 0)
     flechesPerforantes = carac.Carac("Flèches perforantes", 0)
     flechesHurleuses = carac.Carac("Flèches hurleuses", 0)
 
+    # valeurs statiques fixes non sauvegardables
     disciplineKyujutsu = "Kyujutsu" # tir à l'arc
     disciplineIaijutsu = "Iaijutsu"
     disciplineKarumijutsu = "Karumijutsu"
@@ -55,6 +56,18 @@ init -1 python:
     habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
     aUnKatana = True
     habile_ = True # true si le dernier lancer baé sur l'habileté a donné une réussite
+
+    def ALeKyujutsu():
+        return situation_.GetValCarac("discipline") == disciplineKyujutsu
+
+    def ALeIaijutsu():
+        return situation_.GetValCarac("discipline") == disciplineIaijutsu
+
+    def ALeKarumijutsu():
+        return situation_.GetValCarac("discipline") == disciplineKarumijutsu
+
+    def ALeNitoKenjutsu():
+        return situation_.GetValCarac("discipline") == disciplineNitoKenjutsu
 
     def ObtientSecretMortJoyeuse():
         situation_.SetValCarac("secretMortJoyeuse", 1)
@@ -81,7 +94,7 @@ init -1 python:
         return situation_.GetValCaracInt("chanceux") == 1
 
     def PeutTirerALArc():
-        return disciplineKyujutsu == discipline.m_Valeur and ADesFleches()
+        return ALeKyujutsu() and ADesFleches()
 
     def ADesFleches():
         return flechesSaule.m_Valeur > 0 or flechesHarpon.m_Valeur > 0 or flechesPerforantes.m_Valeur > 0 or flechesHurleuses.m_Valeur > 0
@@ -164,32 +177,30 @@ init -1 python:
 
     # arc :
     def Kyujutsu():
-        global discipline, disciplineKyujutsu, flechesSaule, flechesHarpon, flechesPerforantes, flechesHurleuses
+        global disciplineKyujutsu, flechesSaule, flechesHarpon, flechesPerforantes, flechesHurleuses
         flechesSaule.m_Valeur = 3
         flechesHarpon.m_Valeur = 3
         flechesPerforantes.m_Valeur = 3
         flechesHurleuses.m_Valeur = 3
-        discipline = carac.Carac("Discipline", disciplineKyujutsu)
-        return discipline
+        return disciplineKyujutsu
 
     def Iaijutsu():
-        global discipline, disciplineIaijutsu
-        discipline = carac.Carac("Discipline", disciplineIaijutsu)
-        return discipline
+        global disciplineIaijutsu
+        return disciplineIaijutsu
 
     def Karumijutsu():
-        global discipline, disciplineKarumijutsu
-        discipline = carac.Carac("Discipline", disciplineKarumijutsu)
-        return discipline
+        global disciplineKarumijutsu
+        return disciplineKarumijutsu
 
     def NitoKenjutsu():
-        global discipline, disciplineNitoKenjutsu
-        discipline = carac.Carac("Discipline", disciplineNitoKenjutsu)
-        return discipline
+        global disciplineNitoKenjutsu
+        return disciplineNitoKenjutsu
 
     def DisciplineAleatoire():
+        """
+        sélectionne une discipline et ajoute les objets associés
+        """
         global disciplineKyujutsu, disciplineIaijutsu, disciplineKarumijutsu, disciplineNitoKenjutsu
-        return Kyujutsu() # tmp test
         val = random.randint(1, 4)
         if val == 1:
             return Kyujutsu()

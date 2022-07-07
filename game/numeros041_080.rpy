@@ -1,12 +1,11 @@
 label numero41:
-    if discipline.m_Valeur == disciplineKarumijutsu:
+    if ALeKarumijutsu():
         menu:
             "Si vous utilisez l'art du Karumijutsu pour sauter par-dessus vos agresseurs":
                 jump numero35
             "Sinon":
                 jump numero41_suite
 label numero41_suite:
-    "[discipline.m_Valeur]"
     "Vous vous voyez contraint de vous mettre en position de défense pour parer leurs redoutables attaques."
     "Fouettant rageusement l'air à grands coups de sabre, vous parvenez à résister pendant quelque temps, comme si une barrière magique, formée d'un millier de lames tournoyantes, faisait écran entre vous et vos adversaires."
     "Mais hélas ! l'ennemi arrive de tous côtés ; l'un deux réussit à percer votre garde et à vous donner un violent coup de griffe."
@@ -113,7 +112,7 @@ label numero50:
     $ enduranceMukade = 20
     $ tirsArcPossibles = 2
 label numero50_tir_arc:
-    if disciplineKyujutsu == discipline.m_Valeur and tirsArcPossibles > 0 and ADesFleches():
+    if ALeKyujutsu() and tirsArcPossibles > 0 and ADesFleches():
         $ degatsFleche = 2
         menu:
             "Décocher une flèche de saule au monstre" if flechesSaule.m_Valeur > 0:
