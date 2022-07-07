@@ -228,7 +228,7 @@ label numero17:
     "La route pavée s'enfonce dans le brouillard en obliquant vers le nord-est, et un sentier en terre battue part vers le nord, en direction du puits des Ames, ainsi que l'indique un panneau fléché sur le bord du chemin."
     "Par ailleurs, une autre digue s'avance, à l'ouest, vers un lac nappé de brume."
     menu:
-        "vous possédez une carte indiquant la route de la Pagode Écarlate" if cartePagodeEcarlate_:
+        "vous possédez une carte indiquant la route de la Pagode Écarlate" if APagodeEcarlate():
             jump numero107
         "vous n'en avez pas, vous pouvez choisir d'aller soit vers le nord":
             jump numero285

@@ -479,7 +479,7 @@ label numero76:
     "De l'endroit où vous êtes, vous arrivez à peine à distinguer la silhouette sombre et encapuchonnée qui y trône. Le mystérieux personnage semble fixer quelque chose droit devant lui : sur un présentoir, un magnifique nodachi, épée à deux mains, dans un fourreau d'or filigrané. Cette arme ne paraît vraiment pas à sa place dans cet endroit sinistre et respirant le mal."
     "Vous reconnaissez Mort Joyeuse, l'Epée du samouraï, et votre coeur fait un bond. Mais soudain, le personnage encapuchonné tressaille sur son siège et rejette la tête en arrière dans un mouvement de surprise. Vous découvrez alors qu'il n'y a rien sous le capuchon, rien qu'une noirceur impénétrable ! Un murmure sifflant vous parvient, comme une lente expiration :"
     i "Qui ose venir à Onikaru, puits des Démons, et s'exposer ainsi à la fureur d'Ikiru, Maître des Ombres ?"
-    if secretMortJoyeuse_:
+    if ASecretMortJoyeuse():
         jump numero152
     else:
         jump numero94

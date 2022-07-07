@@ -4,8 +4,6 @@ init -2 python:
     from spe.ldoelh import ennemi
     import random
 
-    ResetValsParDefaut()
-
     def ResetValsParDefaut():
         unApresLautre_ = True
         ennemis_ = list()

@@ -22,15 +22,16 @@ init -1 python:
         situation_.SetValCarac("maxChance", maxChanceVal)
         situation_.SetValCarac("chanceux", 1)# 1 si le dernier lancer a donné comme résultat "chanceux"
 
-        # objets
+        # objets & infos diverses spécifiques aventure
         situation_.SetValCarac("PhenixRubis", 0)
+        situation_.SetValCarac("cartePagodeEcarlate", 0) # a une carte qui mène à la pagode écarlate
+        situation_.SetValCarac("secretMortJoyeuse", 0)
 
         # caracs liées au combat :
         situation_.SetValCarac("valEnduranceRestanteEnnemi_", 0) # valeur à partir de laquelle le combat est considéré termié (endurance restante)
+        ResetValsParDefaut() # valeurs liées au combat
 
-    # -------------> infos diverses spécifiques aventure
-    cartePagodeEcarlate_ = False # a une carte qui mène à la pagode écarlate
-    secretMortJoyeuse_ = False
+        discipline = DisciplineAleatoire()
 
     flechesSaule = carac.Carac("Flèches de saule", 0)
     flechesHarpon = carac.Carac("Flèches harpon", 0)
@@ -54,6 +55,20 @@ init -1 python:
     habileteCalculee = carac.Carac("Habileté", habilete.m_Valeur) # peut être différente de l'habileté de base si par exemple le perso a perdu son épée
     aUnKatana = True
     habile_ = True # true si le dernier lancer baé sur l'habileté a donné une réussite
+
+    def ObtientSecretMortJoyeuse():
+        situation_.SetValCarac("secretMortJoyeuse", 1)
+
+    def ASecretMortJoyeuse():
+        # A carte de Pagode Ecarlate
+        return situation_.GetValCaracInt("secretMortJoyeuse") == 1
+
+    def ObtientPagodeEcarlate():
+        situation_.SetValCarac("cartePagodeEcarlate", 1)
+
+    def APagodeEcarlate():
+        # A carte de Pagode Ecarlate
+        return situation_.GetValCaracInt("cartePagodeEcarlate") == 1
 
     def ObtientLePhenixRubis():
         situation_.SetValCarac("PhenixRubis", 1)
@@ -192,5 +207,3 @@ init -1 python:
         if not aUnKatana:
             habileteCalculee.m_Valeur -= 1
         return habileteCalculee
-
-    discipline = DisciplineAleatoire()
