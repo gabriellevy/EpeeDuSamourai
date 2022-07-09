@@ -31,12 +31,13 @@ init -1 python:
         situation_.SetValCarac("valEnduranceRestanteEnnemi_", 0) # valeur à partir de laquelle le combat est considéré termié (endurance restante)
         ResetValsParDefaut() # valeurs liées au combat
 
-        situation_.SetValCarac("discipline", DisciplineAleatoire())
+        # Flèches
+        situation_.SetValCarac("flechesSaule", 0)
+        situation_.SetValCarac("flechesHarpon", 0)
+        situation_.SetValCarac("flechesPerforantes", 0)
+        situation_.SetValCarac("flechesHurleuses", 0)
 
-    flechesSaule = carac.Carac("Flèches de saule", 0)
-    flechesHarpon = carac.Carac("Flèches harpon", 0)
-    flechesPerforantes = carac.Carac("Flèches perforantes", 0)
-    flechesHurleuses = carac.Carac("Flèches hurleuses", 0)
+        situation_.SetValCarac("discipline", DisciplineAleatoire())
 
     # valeurs statiques fixes non sauvegardables
     disciplineKyujutsu = "Kyujutsu" # tir à l'arc
@@ -96,8 +97,32 @@ init -1 python:
     def PeutTirerALArc():
         return ALeKyujutsu() and ADesFleches()
 
+    def ADesFlechesDeSaule():
+        return situation_.GetValCaracInt("flechesSaule") > 0
+
+    def ADesFlechesHarpon():
+        return situation_.GetValCaracInt("flechesHarpon") > 0
+
+    def ADesFlechesPerforantes():
+        return situation_.GetValCaracInt("flechesPerforantes") > 0
+
+    def ADesFlechesHurleuses():
+        return situation_.GetValCaracInt("flechesHurleuses") > 0
+
+    def UtiliseFlecheSaule():
+        situation_.RetirerACarac("flechesSaule", 1)
+
+    def UtiliseFlecheHarpon():
+        situation_.RetirerACarac("flechesHarpon", 1)
+
+    def UtiliseFlechePerforante():
+        situation_.RetirerACarac("flechesPerforantes", 1)
+
+    def UtiliseFlecheHurleuse():
+        situation_.RetirerACarac("flechesHurleuses", 1)
+
     def ADesFleches():
-        return flechesSaule.m_Valeur > 0 or flechesHarpon.m_Valeur > 0 or flechesPerforantes.m_Valeur > 0 or flechesHurleuses.m_Valeur > 0
+        return ADesFlechesDeSaule() or ADesFlechesHarpon() or ADesFlechesPerforantes() or ADesFlechesHurleuses()
 
     def GainDeChance(num):
         global situation_
@@ -175,13 +200,13 @@ init -1 python:
         return texte
 
 
-    # arc :
+    # prendre la disciplie arcarc :
     def Kyujutsu():
-        global disciplineKyujutsu, flechesSaule, flechesHarpon, flechesPerforantes, flechesHurleuses
-        flechesSaule.m_Valeur = 3
-        flechesHarpon.m_Valeur = 3
-        flechesPerforantes.m_Valeur = 3
-        flechesHurleuses.m_Valeur = 3
+        global disciplineKyujutsu, situation_
+        situation_.SetValCarac("flechesSaule", 3)
+        situation_.SetValCarac("flechesHarpon", 3)
+        situation_.SetValCarac("flechesPerforantes", 3)
+        situation_.SetValCarac("flechesHurleuses", 3)
         return disciplineKyujutsu
 
     def Iaijutsu():

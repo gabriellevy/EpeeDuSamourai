@@ -3,10 +3,11 @@
 init -2 python:
     from spe.ldoelh import ennemi
     import random
+    ennemis_ = list()
 
     def ResetValsParDefaut():
-        unApresLautre_ = True
         ennemis_ = list()
+        unApresLautre_ = True
         jumpFinCombat_ = "???"
         testQuandBlesse_ = None
         gotoLabelQuandBlesseEtMalchanceux_ = ""

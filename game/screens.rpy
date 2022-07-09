@@ -1560,11 +1560,15 @@ screen profil_joueur():
             text _("[valhonneur]")
 
 screen fleches():
+    $ nbFlechesSaule = situation_.GetValCaracInt("flechesSaule")
+    $ nbFlechesHarpon = situation_.GetValCaracInt("flechesHarpon")
+    $ nbFlechesPerforantes = situation_.GetValCaracInt("flechesPerforantes")
+    $ nbFlechesHurleuses = situation_.GetValCaracInt("flechesHurleuses")
     frame:
         xpos 5 ypos 200
         grid 1 4:
             spacing 2
-            text _("[flechesSaule.m_Valeur] [flechesSaule.m_Id]")
-            text _("[flechesHarpon.m_Valeur] [flechesHarpon.m_Id]")
-            text _("[flechesPerforantes.m_Valeur] [flechesPerforantes.m_Id]")
-            text _("[flechesHurleuses.m_Valeur] [flechesHurleuses.m_Id]")
+            text _("Flèches de saule [nbFlechesSaule]")
+            text _("Flèches harpon [nbFlechesHarpon]")
+            text _("Flèches perforantes [nbFlechesPerforantes]")
+            text _("Flèches hurleuses [nbFlechesHurleuses]")

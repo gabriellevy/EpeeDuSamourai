@@ -115,17 +115,17 @@ label numero50_tir_arc:
     if ALeKyujutsu() and tirsArcPossibles > 0 and ADesFleches():
         $ degatsFleche = 2
         menu:
-            "Décocher une flèche de saule au monstre" if flechesSaule.m_Valeur > 0:
-                $ flechesSaule.m_Valeur = flechesSaule.m_Valeur - 1
+            "Décocher une flèche de saule au monstre" if ADesFlechesDeSaule():
+                $ UtiliseFlecheSaule()
                 $ degatsFleche = 2
-            "Décocher une flèche-harpon au monstre" if flechesHarpon.m_Valeur > 0:
-                $ flechesHarpon.m_Valeur = flechesHarpon.m_Valeur - 1
+            "Décocher une flèche-harpon au monstre" if ADesFlechesHarpon():
+                $ UtiliseFlecheHarpon()
                 $ degatsFleche = 3
-            "Décocher une flèche perforante au monstre" if flechesPerforantes.m_Valeur > 0:
-                $ flechesPerforantes.m_Valeur = flechesPerforantes.m_Valeur - 1
+            "Décocher une flèche perforante au monstre" if ADesFlechesPerforantes():
+                $ UtiliseFlechePerforante()
                 $ degatsFleche = 2
-            "Décocher une flèche hurleuse au monstre" if flechesHurleuses.m_Valeur > 0:
-                $ flechesHurleuses.m_Valeur = flechesHurleuses.m_Valeur - 1
+            "Décocher une flèche hurleuse au monstre" if ADesFlechesHurleuses():
+                $ UtiliseFlecheHurleuse()
                 $ degatsFleche = 1
 
         $ tirArc1 = LancerDeuxDes()
